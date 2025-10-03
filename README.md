@@ -120,15 +120,14 @@ Example:
 
     <h2>{{ title }}</h2>
 
-6️⃣ Subcomponent Declarations with Selectors
+<h2> 6️⃣ Subcomponent Declarations with Selectors </h2>
 
 You can nest components using their selectors inside parent templates.
 
 Example:
 
-<app-header></app-header>
-<app-users-list></app-users-list>
-<app-footer></app-footer>
-
+    <app-header></app-header>
+    <app-users-list></app-users-list>
+    <app-footer></app-footer>
 
 ✨ This covers today’s practice: Installation → New Project → Components → Data Binding → Selectors.
