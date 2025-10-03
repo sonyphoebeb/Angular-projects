@@ -112,13 +112,13 @@ Example:
     <input [(ngModel)]="username" placeholder="Enter name">
     <p>Welcome, {{ username }}!</p>
 
-5️⃣ Interpolation
+<h2> 5️⃣ Interpolation </h2>
 
 Used to display dynamic values in templates.
 
 Example:
 
-<h2>{{ title }}</h2>
+    <h2>{{ title }}</h2>
 
 6️⃣ Subcomponent Declarations with Selectors
 
