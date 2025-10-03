@@ -103,14 +103,14 @@ Example:
 
     <app-users-list></app-users-list>
 
-4️⃣ ngModel
+<h2> 4️⃣ ngModel </h2>
 
 Enables two-way data binding between HTML and component class.
 
 Example:
 
-<input [(ngModel)]="username" placeholder="Enter name">
-<p>Welcome, {{ username }}!</p>
+    <input [(ngModel)]="username" placeholder="Enter name">
+    <p>Welcome, {{ username }}!</p>
 
 5️⃣ Interpolation
 
