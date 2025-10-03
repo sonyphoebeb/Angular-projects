@@ -95,13 +95,13 @@ Generate a new component:
 
     ng g c users-list
 
-3️⃣ Selectors
+<h2> 3️⃣ Selectors </h2>
 
 Selectors help use components inside other components.
 
 Example:
 
-<app-users-list></app-users-list>
+    <app-users-list></app-users-list>
 
 4️⃣ ngModel
 
