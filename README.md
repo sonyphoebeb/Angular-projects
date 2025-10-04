@@ -141,21 +141,21 @@ Example:
 
 <h2> 🚀 Phase 1: Property Binding, Event Binding & Directives </h2> 
 
-🔹 1. Property Binding
+<h3> 🔹 1. Property Binding </h3>
 
 Bind component properties to HTML attributes using [ ].
 
 <img [src]="userImage" [alt]="userName">
 <input [value]="userEmail">
 
-🔹 2. Event Binding
+<h3> 🔹 2. Event Binding </h3>
 
 Capture user actions/events using ( ).
 
 <button (click)="onLogin()">Login</button>
 <input (input)="onInputChange($event)">
 
-🔹 3. Structural Directives
+<h3> 🔹 3. Structural Directives </h3>
 
 ✔ *ngIf → Conditional rendering
 
@@ -177,7 +177,7 @@ Capture user actions/events using ( ).
   <p *ngSwitchDefault>Guest Access</p>
 </div>
 
-🔹 4. Attribute Directives
+<h3> 🔹 4. Attribute Directives </h3>
 
 ✔ ngClass → Dynamic classes
 
@@ -192,7 +192,7 @@ Capture user actions/events using ( ).
 
 <h2> 🚀 Phase 2: Building Blocks – Pipes </h2>
 
-🔹 Built-in Pipes
+<h3> 🔹 Built-in Pipes </h3>
 
 Angular pipes help transform data in templates.
 
