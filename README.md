@@ -223,6 +223,78 @@ Angular pipes help transform data in templates.
        <li *ngFor="let item of items | slice:1:3">{{ item }}</li>
     </ul>
 
+<h3> 🔹 Services & Dependency Injection </h3>
+
+🔹 1. Creating Services
+
+Services are used to share data and logic across multiple components.
+
+Created using Angular CLI:
+
+ng generate service user
+
+
+Example service:
+
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'   // makes it available app-wide
+})
+export class UserService {
+  private users = ['Sony', 'Rahul', 'Aditi'];
+
+  getUsers() {
+    return this.users;
+  }
+}
+
+🔹 2. @Injectable Decorator
+
+Marks a class as available for dependency injection (DI).
+
+Ensures that the service can be injected into components or other services.
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DataService {
+  fetchData() {
+    return "Data fetched successfully!";
+  }
+}
+
+🔹 3. Dependency Injection (DI) Concept
+
+DI is a design pattern in Angular that allows classes (like components) to request dependencies from an external source, rather than creating them internally.
+
+Angular injector is responsible for creating service instances and delivering them where needed.
+
+Example: Injecting a service into a component
+
+import { Component, OnInit } from '@angular/core';
+import { UserService } from './user.service';
+
+@Component({
+  selector: 'app-user-list',
+  template: `
+    <h3>User List</h3>
+    <ul>
+      <li *ngFor="let user of users">{{ user }}</li>
+    </ul>
+  `
+})
+export class UserListComponent implements OnInit {
+  users: string[] = [];
+
+  constructor(private userService: UserService) {}  // dependency injected
+
+  ngOnInit() {
+    this.users = this.userService.getUsers();
+  }
+}
+
+
 <h2> 🎯 Learning Outcome </h2> 
 
 ✅ Learned how to bind data (property binding) and handle events (event binding).
@@ -230,5 +302,13 @@ Angular pipes help transform data in templates.
 ✅ Practiced structural & attribute directives to control DOM & styling.
 
 ✅ Applied built-in Angular pipes to transform data in templates.
+
+✅ Created Angular services to separate business logic from components.
+
+✅ Understood the purpose of @Injectable decorator.
+
+✅ Learned how Angular’s Dependency Injection system works.
+
+✅ Injected services into components for reusability & cleaner code.
 
 ✨ This covers Angular Phase 1 & Phase 2 basics – preparing the foundation for building interactive Angular applications.
