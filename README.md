@@ -145,50 +145,47 @@ Example:
 
 Bind component properties to HTML attributes using [ ].
 
-<img [src]="userImage" [alt]="userName">
-<input [value]="userEmail">
+    <img [src]="userImage" [alt]="userName">
+    <input [value]="userEmail">
 
 <h3> 🔹 2. Event Binding </h3>
 
 Capture user actions/events using ( ).
 
-<button (click)="onLogin()">Login</button>
-<input (input)="onInputChange($event)">
+    <button (click)="onLogin()">Login</button>
+    <input (input)="onInputChange($event)">
 
 <h3> 🔹 3. Structural Directives </h3>
 
 ✔ *ngIf → Conditional rendering
 
-<p *ngIf="isLoggedIn">Welcome, {{ userName }}!</p>
-
+    <p *ngIf="isLoggedIn">Welcome, {{ userName }}!</p>
 
 ✔ *ngFor → Looping
 
-<ul>
-  <li *ngFor="let item of items">{{ item }}</li>
-</ul>
-
+    <ul>
+       <li *ngFor="let item of items">{{ item }}</li>
+    </ul>
 
 ✔ *ngSwitch → Conditional content
 
-<div [ngSwitch]="role">
-  <p *ngSwitchCase="'admin'">Admin Panel</p>
-  <p *ngSwitchCase="'user'">User Dashboard</p>
-  <p *ngSwitchDefault>Guest Access</p>
-</div>
+     <div [ngSwitch]="role">
+     <p *ngSwitchCase="'admin'">Admin Panel</p>
+     <p *ngSwitchCase="'user'">User Dashboard</p>
+     <p *ngSwitchDefault>Guest Access</p>
+    </div>
 
 <h3> 🔹 4. Attribute Directives </h3>
 
 ✔ ngClass → Dynamic classes
 
-<p [ngClass]="{ 'active': isActive, 'inactive': !isActive }">Status</p>
-
+    <p [ngClass]="{ 'active': isActive, 'inactive': !isActive }">Status</p>
 
 ✔ ngStyle → Inline styles dynamically
 
-<p [ngStyle]="{ 'color': isActive ? 'green' : 'red' }">
-  {{ isActive ? 'Active' : 'Inactive' }}
-</p>
+    <p [ngStyle]="{ 'color': isActive ? 'green' : 'red' }">
+       {{ isActive ? 'Active' : 'Inactive' }}
+    </p>
 
 <h2> 🚀 Phase 2: Building Blocks – Pipes </h2>
 
@@ -198,39 +195,33 @@ Angular pipes help transform data in templates.
 
 ✔ UpperCasePipe
 
-<p>{{ userName | uppercase }}</p>
-
+    <p>{{ userName | uppercase }}</p>
 
 ✔ LowerCasePipe
 
-<p>{{ userName | lowercase }}</p>
-
+    <p>{{ userName | lowercase }}</p>
 
 ✔ DatePipe
 
-<p>{{ today | date:'fullDate' }}</p>
-
+    <p>{{ today | date:'fullDate' }}</p>
 
 ✔ CurrencyPipe
 
-<p>{{ price | currency:'USD':'symbol' }}</p>
-
+    <p>{{ price | currency:'USD':'symbol' }}</p>
 
 ✔ DecimalPipe
 
-<p>{{ value | number:'1.2-2' }}</p>
-
+    <p>{{ value | number:'1.2-2' }}</p>
 
 ✔ PercentPipe
 
-<p>{{ score | percent }}</p>
-
+    <p>{{ score | percent }}</p>
 
 ✔ SlicePipe
 
-<ul>
-  <li *ngFor="let item of items | slice:1:3">{{ item }}</li>
-</ul>
+    <ul>
+       <li *ngFor="let item of items | slice:1:3">{{ item }}</li>
+    </ul>
 
 <h2> 🎯 Learning Outcome </h2> 
 
