@@ -135,8 +135,10 @@ Example:
 
 <br>
 
-📘 Angular Practice – Phase 1 & Phase 2
-🗓️ Date: 04-Oct-2025
+# 📘 Today's Angular Class – Phase 1 & Phase 2
+
+<h2>🗓️ Date: 04-Oct-2025 </h2>
+
 🚀 Phase 1: Property Binding, Event Binding & Directives
 🔹 1. Property Binding
 
