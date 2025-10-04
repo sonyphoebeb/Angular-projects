@@ -248,22 +248,22 @@ Example service:
       }
      }
 
-🔹 2. @Injectable Decorator
+<h3> 🔹 2. @Injectable Decorator </h3>
 
 Marks a class as available for dependency injection (DI).
 
 Ensures that the service can be injected into components or other services.
 
-@Injectable({
-  providedIn: 'root'
-})
-export class DataService {
-  fetchData() {
+    @Injectable({
+     providedIn: 'root'
+     })
+     export class DataService {
+     fetchData() {
     return "Data fetched successfully!";
-  }
-}
+     }
+    }
 
-🔹 3. Dependency Injection (DI) Concept
+<h3> 🔹 3. Dependency Injection (DI) Concept </h3>
 
 DI is a design pattern in Angular that allows classes (like components) to request dependencies from an external source, rather than creating them internally.
 
@@ -271,28 +271,27 @@ Angular injector is responsible for creating service instances and delivering th
 
 Example: Injecting a service into a component
 
-import { Component, OnInit } from '@angular/core';
-import { UserService } from './user.service';
+    import { Component, OnInit } from '@angular/core';
+    import { UserService } from './user.service';
 
-@Component({
-  selector: 'app-user-list',
-  template: `
+    @Component({
+     selector: 'app-user-list',
+    template: `
     <h3>User List</h3>
     <ul>
       <li *ngFor="let user of users">{{ user }}</li>
     </ul>
-  `
-})
-export class UserListComponent implements OnInit {
-  users: string[] = [];
+    `
+     })
+    export class UserListComponent implements OnInit {
+     users: string[] = [];
 
-  constructor(private userService: UserService) {}  // dependency injected
+    constructor(private userService: UserService) {}  // dependency injected
 
-  ngOnInit() {
+     ngOnInit() {
     this.users = this.userService.getUsers();
-  }
-}
-
+     }
+     }
 
 <h2> 🎯 Learning Outcome </h2> 
 
