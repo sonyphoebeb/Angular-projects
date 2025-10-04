@@ -139,7 +139,8 @@ Example:
 
 <h2>🗓️ Date: 04-Oct-2025 </h2>
 
-🚀 Phase 1: Property Binding, Event Binding & Directives
+<h2> 🚀 Phase 1: Property Binding, Event Binding & Directives </h2> 
+
 🔹 1. Property Binding
 
 Bind component properties to HTML attributes using [ ].
@@ -189,7 +190,8 @@ Capture user actions/events using ( ).
   {{ isActive ? 'Active' : 'Inactive' }}
 </p>
 
-🚀 Phase 2: Building Blocks – Pipes
+<h2> 🚀 Phase 2: Building Blocks – Pipes </h2>
+
 🔹 Built-in Pipes
 
 Angular pipes help transform data in templates.
@@ -230,7 +232,7 @@ Angular pipes help transform data in templates.
   <li *ngFor="let item of items | slice:1:3">{{ item }}</li>
 </ul>
 
-🎯 Learning Outcome
+<h2> 🎯 Learning Outcome </h2> 
 
 ✅ Learned how to bind data (property binding) and handle events (event binding).
 
