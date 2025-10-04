@@ -1,4 +1,4 @@
-# 📅 03-Oct-2025 – Angular Basics
+#  Angular Installation & Introduction - 📅 03-Oct-2025
 
 <h2> 1️⃣ Angular Installation </h2>
 
