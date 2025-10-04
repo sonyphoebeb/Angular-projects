@@ -131,3 +131,109 @@ Example:
     <app-footer></app-footer>
 
 ✨ This covers today’s practice: Installation → New Project → Components → Data Binding → Selectors.
+
+
+<br>
+
+📘 Angular Practice – Phase 1 & Phase 2
+🗓️ Date: 04-Oct-2025
+🚀 Phase 1: Property Binding, Event Binding & Directives
+🔹 1. Property Binding
+
+Bind component properties to HTML attributes using [ ].
+
+<img [src]="userImage" [alt]="userName">
+<input [value]="userEmail">
+
+🔹 2. Event Binding
+
+Capture user actions/events using ( ).
+
+<button (click)="onLogin()">Login</button>
+<input (input)="onInputChange($event)">
+
+🔹 3. Structural Directives
+
+✔ *ngIf → Conditional rendering
+
+<p *ngIf="isLoggedIn">Welcome, {{ userName }}!</p>
+
+
+✔ *ngFor → Looping
+
+<ul>
+  <li *ngFor="let item of items">{{ item }}</li>
+</ul>
+
+
+✔ *ngSwitch → Conditional content
+
+<div [ngSwitch]="role">
+  <p *ngSwitchCase="'admin'">Admin Panel</p>
+  <p *ngSwitchCase="'user'">User Dashboard</p>
+  <p *ngSwitchDefault>Guest Access</p>
+</div>
+
+🔹 4. Attribute Directives
+
+✔ ngClass → Dynamic classes
+
+<p [ngClass]="{ 'active': isActive, 'inactive': !isActive }">Status</p>
+
+
+✔ ngStyle → Inline styles dynamically
+
+<p [ngStyle]="{ 'color': isActive ? 'green' : 'red' }">
+  {{ isActive ? 'Active' : 'Inactive' }}
+</p>
+
+🚀 Phase 2: Building Blocks – Pipes
+🔹 Built-in Pipes
+
+Angular pipes help transform data in templates.
+
+✔ UpperCasePipe
+
+<p>{{ userName | uppercase }}</p>
+
+
+✔ LowerCasePipe
+
+<p>{{ userName | lowercase }}</p>
+
+
+✔ DatePipe
+
+<p>{{ today | date:'fullDate' }}</p>
+
+
+✔ CurrencyPipe
+
+<p>{{ price | currency:'USD':'symbol' }}</p>
+
+
+✔ DecimalPipe
+
+<p>{{ value | number:'1.2-2' }}</p>
+
+
+✔ PercentPipe
+
+<p>{{ score | percent }}</p>
+
+
+✔ SlicePipe
+
+<ul>
+  <li *ngFor="let item of items | slice:1:3">{{ item }}</li>
+</ul>
+
+🎯 Learning Outcome
+
+✅ Learned how to bind data (property binding) and handle events (event binding).
+
+✅ Practiced structural & attribute directives to control DOM & styling.
+
+✅ Applied built-in Angular pipes to transform data in templates.
+
+✨ This covers Angular Phase 1 & Phase 2 basics – preparing the foundation for building interactive Angular applications.
