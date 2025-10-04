@@ -223,31 +223,30 @@ Angular pipes help transform data in templates.
        <li *ngFor="let item of items | slice:1:3">{{ item }}</li>
     </ul>
 
-<h3> 🔹 Services & Dependency Injection </h3>
+<h2> 🔹 Services & Dependency Injection </h2>
 
-🔹 1. Creating Services
+<h3> 🔹 1. Creating Services </h3>
 
 Services are used to share data and logic across multiple components.
 
 Created using Angular CLI:
 
-ng generate service user
-
+    ng generate service user
 
 Example service:
 
-import { Injectable } from '@angular/core';
+     import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'   // makes it available app-wide
-})
-export class UserService {
-  private users = ['Sony', 'Rahul', 'Aditi'];
+     @Injectable({
+     providedIn: 'root'   // makes it available app-wide
+     })
+     export class UserService {
+      private users = ['Sony', 'Rahul', 'Aditi'];
 
-  getUsers() {
+      getUsers() {
     return this.users;
-  }
-}
+      }
+     }
 
 🔹 2. @Injectable Decorator
 
