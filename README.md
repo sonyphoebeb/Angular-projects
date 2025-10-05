@@ -535,6 +535,17 @@ Template:
 
 <h2> 📘 Summary Table </h2>
 
+<table> 
+  
+  <th>Concept</th>
+  <td>Root Module</td>
+  <td>Feature Module</td>
+
+  <th>Module / Import</th>
+  <td>AppModule</td>
+  <td>UsersModule</td>
+</table>
+
 Concept	           Module / Import	       Key Feature
 
 Root Module	       AppModule	          Bootstraps the app
