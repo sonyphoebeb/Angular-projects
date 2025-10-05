@@ -362,25 +362,24 @@ Import this in app.module.ts (or load lazily):
 
     imports: [UsersModule]
 
-🔁 Shared Modules
+<h2> 🔁 Shared Modules </h2>
 
 For reusable components, directives, and pipes used across multiple modules.
 
 Example: shared.module.ts
 
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { CustomPipe } from './custom.pipe';
-import { CustomDirective } from './custom.directive';
+    import { NgModule } from '@angular/core';
+    import { CommonModule } from '@angular/common';
+    import { FormsModule } from '@angular/forms';
+    import { CustomPipe } from './custom.pipe';
+    import { CustomDirective } from './custom.directive';
 
-@NgModule({
-  declarations: [CustomPipe, CustomDirective],
-  imports: [CommonModule],
-  exports: [CommonModule, FormsModule, CustomPipe, CustomDirective]
-})
-export class SharedModule {}
-
+    @NgModule({
+    declarations: [CustomPipe, CustomDirective],
+    imports: [CommonModule],
+    exports: [CommonModule, FormsModule, CustomPipe, CustomDirective]
+    })
+    export class SharedModule {}
 
 ✅ You export what other modules can use.
 
