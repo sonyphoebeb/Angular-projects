@@ -535,16 +535,17 @@ Template:
 
 <h2> 📘 Summary Table </h2>
 
-Concept	Module / Import	Key Feature
-Root Module	AppModule	Bootstraps the app
-Feature Module	UsersModule	Groups related components
-Shared Module	SharedModule	Reusable utilities
-Lazy Loading	loadChildren()	Loads on demand
-Forms	FormsModule	Template-driven forms
-Routing	RouterModule	Navigation setup
-Route Params	ActivatedRoute	Dynamic URL data
-Query Params	ActivatedRoute	Optional parameters
-Child Routes	Nested Routes	Hierarchical navigation
+Concept	           Module / Import	       Key Feature
+
+Root Module	       AppModule	          Bootstraps the app
+Feature Module	   UsersModule	        Groups related components
+Shared Module	     SharedModule	        Reusable utilities
+Lazy Loading	     loadChildren()	      Loads on demand
+Forms              FormsModule	        Template-driven forms
+Routing	           RouterModule     	  Navigation setup
+Route Params       ActivatedRoute	      Dynamic URL data
+Query Params	     ActivatedRoute	      Optional parameters
+Child Routes	     Nested Routes	      Hierarchical navigation
 
 
 
