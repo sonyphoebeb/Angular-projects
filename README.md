@@ -547,20 +547,61 @@ Template:
    <td>Root Module</td>
    <td>AppModule</td> 
    <td>Bootstraps the app</td>
- </tr>
-  
-  
-</table>
+  </tr>
 
-     	          
-Feature Module	   UsersModule	        Groups related components
-Shared Module	     SharedModule	        Reusable utilities
-Lazy Loading	     loadChildren()	      Loads on demand
-Forms              FormsModule	        Template-driven forms
-Routing	           RouterModule     	  Navigation setup
-Route Params       ActivatedRoute	      Dynamic URL data
-Query Params	     ActivatedRoute	      Optional parameters
-Child Routes	     Nested Routes	      Hierarchical navigation
+  <tr>
+   <td>Feature Module</td>
+   <td>UsersModule</td> 
+   <td>Groups related components</td>
+  </tr>
+
+  <tr>
+   <td>Shared Module</td>
+   <td>SharedModule</td> 
+   <td>Reusable utilities</td>
+  </tr>
+
+  <tr>
+   <td>Lazy Loading</td>
+   <td>loadChildren()</td> 
+   <td>Loads on demand</td>
+  </tr>
+
+  <tr>
+   <td>Forms</td>
+   <td>FormsModule</td> 
+   <td>Template-driven forms</td>
+  </tr>
+
+  <tr>
+   <td>Routing</td>
+   <td>RouterModule</td> 
+   <td>Navigation setup</td>
+  </tr>
+
+  <tr>
+   <td>Route Params</td>
+   <td>ActivatedRoute</td> 
+   <td>Dynamic URL data</td>
+  </tr>
+
+  <tr>
+   <td>Query Params</td>
+   <td>ActivatedRoute</td> 
+   <td>Optional parameters</td>
+  </tr>
+
+  <tr>
+   <td>Child Routes</td>
+   <td>Nested Routes</td> 
+   <td>Hierarchical navigation</td>
+  </tr>
+  
+  
+</table>          	  
+       	      
+	     	      
+	     	      
 
 
 
