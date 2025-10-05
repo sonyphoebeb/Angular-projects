@@ -537,25 +537,22 @@ Template:
 
 <table> 
 
-  <tr><th>Concept</th>
-    <td>Root Module</td>
-  <td>Feature Module</td>
+  <tr>
+    <th>Concept</th>
+    <th>Module / Import</th>
+    <th>Key Features</th>
   </tr>
   
-  <tr><th>Module / Import</th>
-  <td>AppModule</td>
-  <td>UsersModule</td>
+  <tr>
+   <td>Root Module</td>
+   <td>AppModule</td> 
+   <td>Bootstraps the app</td>
  </tr>
   
   
-
-  <th></th>
-  
 </table>
 
-Concept	           Module / Import	       
-
-Root Module	       AppModule	          Bootstraps the app
+     	          
 Feature Module	   UsersModule	        Groups related components
 Shared Module	     SharedModule	        Reusable utilities
 Lazy Loading	     loadChildren()	      Loads on demand
