@@ -310,3 +310,22 @@ Example: Injecting a service into a component
 ✅ Injected services into components for reusability & cleaner code.
 
 ✨ This covers Angular Phase 1 & Phase 2 basics – preparing the foundation for building interactive Angular applications.
+
+<br>
+
+# 🧱 Angular Modules, Forms, and Routing 
+
+<h2>🗓️ Date: 05-Oct-2025 </h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
