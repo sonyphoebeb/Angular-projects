@@ -322,23 +322,23 @@ Example: Injecting a service into a component
 Modules help organize your Angular application into logical units of functionality.
 Every Angular app has at least one root module (AppModule), but larger apps are divided into Feature Modules, Shared Modules, and optionally Lazy-Loaded Modules.
 
-🏠 AppModule
+<h2> 🏠 AppModule </h2> 
 
 The root module of every Angular app, defined in app.module.ts.
 It bootstraps the application and imports all other modules.
 
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+    import { NgModule } from '@angular/core';
+    import { BrowserModule } from '@angular/platform-browser';
+    import { AppComponent } from './app.component';
+    import { AppRoutingModule } from './app-routing.module';
+    import { FormsModule } from '@angular/forms';
 
-@NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  bootstrap: [AppComponent]
-})
-export class AppModule {}
+    @NgModule({
+    declarations: [AppComponent],
+    imports: [BrowserModule, AppRoutingModule, FormsModule],
+    bootstrap: [AppComponent]
+    })
+    export class AppModule {}
 
 🧩 Feature Modules
 
