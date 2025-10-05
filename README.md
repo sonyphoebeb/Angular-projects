@@ -317,7 +317,7 @@ Example: Injecting a service into a component
 
 <h2>🗓️ Date: 05-Oct-2025 </h2>
 
-<h2> 📦 1. Modules in Angular </h2>
+<h1> 📦 1. Modules in Angular </h1>
 
 Modules help organize your Angular application into logical units of functionality.
 Every Angular app has at least one root module (AppModule), but larger apps are divided into Feature Modules, Shared Modules, and optionally Lazy-Loaded Modules.
@@ -383,160 +383,158 @@ Example: shared.module.ts
 
 ✅ You export what other modules can use.
 
-🕐 Lazy Loading Modules
+<h2> 🕐 Lazy Loading Modules </h2>
 
 Load feature modules only when needed, improving performance.
 
 In app-routing.module.ts:
 
-const routes: Routes = [
-  { path: '', redirectTo: 'users', pathMatch: 'full' },
-  {
+    const routes: Routes = [
+    { path: '', redirectTo: 'users', pathMatch: 'full' },
+    {
     path: 'users',
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
-  }
-];
-
+    }
+    ];
 
 In users/users-routing.module.ts:
 
-const routes: Routes = [
-  { path: '', component: UsersComponent }
-];
+    const routes: Routes = [
+    { path: '', component: UsersComponent }
+    ];
 
-🧠 2. Template-Driven Forms
+<h1> 🧠 2. Template-Driven Forms </h1>
 
 Used for simpler forms where logic is mostly in the template.
 
-📥 Import FormsModule
+<h2> 📥 Import FormsModule </h2>
 
 In your module:
 
-import { FormsModule } from '@angular/forms';
+    import { FormsModule } from '@angular/forms';
 
-@NgModule({
-  imports: [FormsModule]
-})
-export class AppModule {}
+    @NgModule({
+    imports: [FormsModule]
+    })
+    export class AppModule {}
 
-✍️ Using ngModel for Two-Way Binding
-<input type="text" [(ngModel)]="userName" placeholder="Enter name">
-<p>Hello {{ userName }}!</p>
+<h2> ✍️ Using ngModel for Two-Way Binding </h2>
 
-✅ Form Validation
+    <input type="text" [(ngModel)]="userName" placeholder="Enter name">
+    <p>Hello {{ userName }}!</p>
+
+<h2> ✅ Form Validation </h2>
 
 Angular provides built-in validation attributes:
 
-<form #userForm="ngForm">
-  <input name="email" ngModel required email>
-  <div *ngIf="userForm.controls.email?.invalid && userForm.controls.email?.touched">
-    <small *ngIf="userForm.controls.email?.errors?.['required']">Email is required</small>
-    <small *ngIf="userForm.controls.email?.errors?.['email']">Enter a valid email</small>
-  </div>
-  <button [disabled]="userForm.invalid">Submit</button>
-</form>
+    <form #userForm="ngForm">
+     <input name="email" ngModel required email>
+      <div *ngIf="userForm.controls.email?.invalid && userForm.controls.email?.touched">
+      <small *ngIf="userForm.controls.email?.errors?.['required']">Email is required</small>
+      <small *ngIf="userForm.controls.email?.errors?.['email']">Enter a valid email</small>
+    </div>
+    <button [disabled]="userForm.invalid">Submit</button>
+    </form>
 
-⚠️ Error Handling
+<h2> ⚠️ Error Handling </h2>
 
 You can display validation messages conditionally using touched, dirty, and invalid states.
 
-<div *ngIf="name.invalid && name.touched" class="error">
-  Name is required!
-</div>
+    <div *ngIf="name.invalid && name.touched" class="error">
+     Name is required!
+    </div>
 
-🚦 3. Router Basics
+<h1> 🚦 3. Router Basics </h1>
 
 Angular Router lets you navigate between views (components) inside a Single Page Application (SPA).
 
-🗺️ Setting Up Routes
+<h2> 🗺️ Setting Up Routes </h2>
 
 Create a file app-routing.module.ts:
 
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { UsersComponent } from './users/users.component';
+    import { NgModule } from '@angular/core';
+    import { RouterModule, Routes } from '@angular/router';
+    import { HomeComponent } from './home/home.component';
+    import { UsersComponent } from './users/users.component';
 
-const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'users', component: UsersComponent }
-];
+    const routes: Routes = [
+     { path: '', component: HomeComponent },
+     { path: 'users', component: UsersComponent }
+    ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule {}
+    @NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+    })
+    export class AppRoutingModule {}
 
-🔗 Navigation with routerLink
-<nav>
-  <a routerLink="/">Home</a>
-  <a routerLink="/users">Users</a>
-</nav>
+<h2> 🔗 Navigation with routerLink </h2>
 
-<router-outlet></router-outlet>
+    <nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/users">Users</a>
+    </nav>
 
+    <router-outlet></router-outlet>
 
-<router-outlet> is where the routed components will be displayed.
+    <router-outlet> is where the routed components will be displayed.
 
-📦 Route Parameters
+<h2> 📦 Route Parameters </h2>
 
 Pass dynamic values in URLs.
 
-const routes: Routes = [
-  { path: 'users/:id', component: UserDetailComponent }
-];
-
+    const routes: Routes = [
+    { path: 'users/:id', component: UserDetailComponent }
+    ];
 
 In Template:
 
-<a [routerLink]="['/users', user.id]">View Details</a>
-
+    <a [routerLink]="['/users', user.id]">View Details</a>
 
 In Component:
 
-import { ActivatedRoute } from '@angular/router';
+    import { ActivatedRoute } from '@angular/router';
 
-constructor(private route: ActivatedRoute) {
-  this.route.params.subscribe(params => {
+     constructor(private route: ActivatedRoute) {
+     this.route.params.subscribe(params => {
     console.log(params['id']);
-  });
-}
+     });
+    }
+ 
+<h2> 🔍 Query Parameters </h2>
 
-🔍 Query Parameters
-<a [routerLink]="['/users']" [queryParams]="{ page: 2, sort: 'name' }">Next Page</a>
-
+    <a [routerLink]="['/users']" [queryParams]="{ page: 2, sort: 'name' }">Next Page</a>
 
 In Component:
 
-this.route.queryParams.subscribe(params => {
-  console.log(params['page']); // 2
-});
+    this.route.queryParams.subscribe(params => {
+    console.log(params['page']); // 2
+    });
 
-👶 Child Routes
+<h2> 👶 Child Routes </h2>
 
 Used for nested routing within a feature module.
 
-const routes: Routes = [
-  {
+    const routes: Routes = [
+     {
     path: 'users',
     component: UsersComponent,
     children: [
       { path: 'details/:id', component: UserDetailComponent },
       { path: 'settings', component: UserSettingsComponent }
     ]
-  }
-];
-
+    }
+    ];
 
 Template:
 
-<a routerLink="details/1">User 1 Details</a>
-<a routerLink="settings">Settings</a>
+    <a routerLink="details/1">User 1 Details</a>
+    <a routerLink="settings">Settings</a>
 
-<router-outlet></router-outlet> <!-- For child components -->
+    <router-outlet></router-outlet> <!-- For child components -->
 
-📘 Summary Table
+<h2> 📘 Summary Table </h2>
+
 Concept	Module / Import	Key Feature
 Root Module	AppModule	Bootstraps the app
 Feature Module	UsersModule	Groups related components
