@@ -317,7 +317,7 @@ Example: Injecting a service into a component
 
 <h2>🗓️ Date: 05-Oct-2025 </h2>
 
-📦 1. Modules in Angular
+<h2> 📦 1. Modules in Angular </h2>
 
 Modules help organize your Angular application into logical units of functionality.
 Every Angular app has at least one root module (AppModule), but larger apps are divided into Feature Modules, Shared Modules, and optionally Lazy-Loaded Modules.
