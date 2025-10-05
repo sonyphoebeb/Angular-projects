@@ -340,29 +340,27 @@ It bootstraps the application and imports all other modules.
     })
     export class AppModule {}
 
-🧩 Feature Modules
+<h2> 🧩 Feature Modules </h2>
 
 Feature modules group related functionality — e.g., UsersModule, ProductsModule, OrdersModule.
 
-ng g m users
-
+    ng g m users
 
 Example: users.module.ts
 
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { UsersComponent } from './users.component';
+    import { NgModule } from '@angular/core';
+    import { CommonModule } from '@angular/common';
+    import { UsersComponent } from './users.component';
 
-@NgModule({
-  declarations: [UsersComponent],
-  imports: [CommonModule]
-})
-export class UsersModule {}
-
+    @NgModule({
+    declarations: [UsersComponent],
+    imports: [CommonModule]
+    })
+    export class UsersModule {}
 
 Import this in app.module.ts (or load lazily):
 
-imports: [UsersModule]
+    imports: [UsersModule]
 
 🔁 Shared Modules
 
