@@ -317,7 +317,239 @@ Example: Injecting a service into a component
 
 <h2>🗓️ Date: 05-Oct-2025 </h2>
 
+📦 1. Modules in Angular
 
+Modules help organize your Angular application into logical units of functionality.
+Every Angular app has at least one root module (AppModule), but larger apps are divided into Feature Modules, Shared Modules, and optionally Lazy-Loaded Modules.
+
+🏠 AppModule
+
+The root module of every Angular app, defined in app.module.ts.
+It bootstraps the application and imports all other modules.
+
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+
+🧩 Feature Modules
+
+Feature modules group related functionality — e.g., UsersModule, ProductsModule, OrdersModule.
+
+ng g m users
+
+
+Example: users.module.ts
+
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { UsersComponent } from './users.component';
+
+@NgModule({
+  declarations: [UsersComponent],
+  imports: [CommonModule]
+})
+export class UsersModule {}
+
+
+Import this in app.module.ts (or load lazily):
+
+imports: [UsersModule]
+
+🔁 Shared Modules
+
+For reusable components, directives, and pipes used across multiple modules.
+
+Example: shared.module.ts
+
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { CustomPipe } from './custom.pipe';
+import { CustomDirective } from './custom.directive';
+
+@NgModule({
+  declarations: [CustomPipe, CustomDirective],
+  imports: [CommonModule],
+  exports: [CommonModule, FormsModule, CustomPipe, CustomDirective]
+})
+export class SharedModule {}
+
+
+✅ You export what other modules can use.
+
+🕐 Lazy Loading Modules
+
+Load feature modules only when needed, improving performance.
+
+In app-routing.module.ts:
+
+const routes: Routes = [
+  { path: '', redirectTo: 'users', pathMatch: 'full' },
+  {
+    path: 'users',
+    loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+  }
+];
+
+
+In users/users-routing.module.ts:
+
+const routes: Routes = [
+  { path: '', component: UsersComponent }
+];
+
+🧠 2. Template-Driven Forms
+
+Used for simpler forms where logic is mostly in the template.
+
+📥 Import FormsModule
+
+In your module:
+
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  imports: [FormsModule]
+})
+export class AppModule {}
+
+✍️ Using ngModel for Two-Way Binding
+<input type="text" [(ngModel)]="userName" placeholder="Enter name">
+<p>Hello {{ userName }}!</p>
+
+✅ Form Validation
+
+Angular provides built-in validation attributes:
+
+<form #userForm="ngForm">
+  <input name="email" ngModel required email>
+  <div *ngIf="userForm.controls.email?.invalid && userForm.controls.email?.touched">
+    <small *ngIf="userForm.controls.email?.errors?.['required']">Email is required</small>
+    <small *ngIf="userForm.controls.email?.errors?.['email']">Enter a valid email</small>
+  </div>
+  <button [disabled]="userForm.invalid">Submit</button>
+</form>
+
+⚠️ Error Handling
+
+You can display validation messages conditionally using touched, dirty, and invalid states.
+
+<div *ngIf="name.invalid && name.touched" class="error">
+  Name is required!
+</div>
+
+🚦 3. Router Basics
+
+Angular Router lets you navigate between views (components) inside a Single Page Application (SPA).
+
+🗺️ Setting Up Routes
+
+Create a file app-routing.module.ts:
+
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'users', component: UsersComponent }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
+
+🔗 Navigation with routerLink
+<nav>
+  <a routerLink="/">Home</a>
+  <a routerLink="/users">Users</a>
+</nav>
+
+<router-outlet></router-outlet>
+
+
+<router-outlet> is where the routed components will be displayed.
+
+📦 Route Parameters
+
+Pass dynamic values in URLs.
+
+const routes: Routes = [
+  { path: 'users/:id', component: UserDetailComponent }
+];
+
+
+In Template:
+
+<a [routerLink]="['/users', user.id]">View Details</a>
+
+
+In Component:
+
+import { ActivatedRoute } from '@angular/router';
+
+constructor(private route: ActivatedRoute) {
+  this.route.params.subscribe(params => {
+    console.log(params['id']);
+  });
+}
+
+🔍 Query Parameters
+<a [routerLink]="['/users']" [queryParams]="{ page: 2, sort: 'name' }">Next Page</a>
+
+
+In Component:
+
+this.route.queryParams.subscribe(params => {
+  console.log(params['page']); // 2
+});
+
+👶 Child Routes
+
+Used for nested routing within a feature module.
+
+const routes: Routes = [
+  {
+    path: 'users',
+    component: UsersComponent,
+    children: [
+      { path: 'details/:id', component: UserDetailComponent },
+      { path: 'settings', component: UserSettingsComponent }
+    ]
+  }
+];
+
+
+Template:
+
+<a routerLink="details/1">User 1 Details</a>
+<a routerLink="settings">Settings</a>
+
+<router-outlet></router-outlet> <!-- For child components -->
+
+📘 Summary Table
+Concept	Module / Import	Key Feature
+Root Module	AppModule	Bootstraps the app
+Feature Module	UsersModule	Groups related components
+Shared Module	SharedModule	Reusable utilities
+Lazy Loading	loadChildren()	Loads on demand
+Forms	FormsModule	Template-driven forms
+Routing	RouterModule	Navigation setup
+Route Params	ActivatedRoute	Dynamic URL data
+Query Params	ActivatedRoute	Optional parameters
+Child Routes	Nested Routes	Hierarchical navigation
 
 
 
