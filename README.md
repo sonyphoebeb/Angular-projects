@@ -612,17 +612,17 @@ This repository contains practice examples for Angular, focusing on basic compon
 
 <h3> 2. Interpolation ({{ }}) </h3> 
 
-Displaying dynamic data from the component in the template.
+* Displaying dynamic data from the component in the template.
 
-Using expressions and calling lightweight methods.
+* Using expressions and calling lightweight methods.
 
 <h3> 3. Real-Time Components (without OnInit) </h3> 
 
-Live Counter: increments automatically every second.
+* Live Counter: increments automatically every second.
 
-Digital Clock (optional extension).
+* Digital Clock (optional extension).
 
-Demonstrates practical dynamic UI updates.
+* Demonstrates practical dynamic UI updates.
 
 <h2>🔹 Examples </h2>
 
