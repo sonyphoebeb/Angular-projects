@@ -135,9 +135,7 @@ Example:
 
 <br>
 
-# 📘 Today's Angular Class – Phase 1 & Phase 2
-
-<h2>🗓️ Date: 04-Oct-2025 </h2>
+# 🗓️ Date: 04-Oct-2025 - Today's Angular Class (Phase 1 & Phase 2)
 
 <h2> 🚀 Phase 1: Property Binding, Event Binding & Directives </h2> 
 
@@ -310,3 +308,400 @@ Example: Injecting a service into a component
 ✅ Injected services into components for reusability & cleaner code.
 
 ✨ This covers Angular Phase 1 & Phase 2 basics – preparing the foundation for building interactive Angular applications.
+
+<br>
+
+# 🧱 Angular Modules, Forms, and Routing 
+
+<h2>🗓️ Date: 05-Oct-2025 </h2>
+
+<h1> 📦 1. Modules in Angular </h1>
+
+Modules help organize your Angular application into logical units of functionality.
+Every Angular app has at least one root module (AppModule), but larger apps are divided into Feature Modules, Shared Modules, and optionally Lazy-Loaded Modules.
+
+<h2> 🏠 AppModule </h2> 
+
+The root module of every Angular app, defined in app.module.ts.
+It bootstraps the application and imports all other modules.
+
+    import { NgModule } from '@angular/core';
+    import { BrowserModule } from '@angular/platform-browser';
+    import { AppComponent } from './app.component';
+    import { AppRoutingModule } from './app-routing.module';
+    import { FormsModule } from '@angular/forms';
+
+    @NgModule({
+    declarations: [AppComponent],
+    imports: [BrowserModule, AppRoutingModule, FormsModule],
+    bootstrap: [AppComponent]
+    })
+    export class AppModule {}
+
+<h2> 🧩 Feature Modules </h2>
+
+Feature modules group related functionality — e.g., UsersModule, ProductsModule, OrdersModule.
+
+    ng g m users
+
+Example: users.module.ts
+
+    import { NgModule } from '@angular/core';
+    import { CommonModule } from '@angular/common';
+    import { UsersComponent } from './users.component';
+
+    @NgModule({
+    declarations: [UsersComponent],
+    imports: [CommonModule]
+    })
+    export class UsersModule {}
+
+Import this in app.module.ts (or load lazily):
+
+    imports: [UsersModule]
+
+<h2> 🔁 Shared Modules </h2>
+
+For reusable components, directives, and pipes used across multiple modules.
+
+Example: shared.module.ts
+
+    import { NgModule } from '@angular/core';
+    import { CommonModule } from '@angular/common';
+    import { FormsModule } from '@angular/forms';
+    import { CustomPipe } from './custom.pipe';
+    import { CustomDirective } from './custom.directive';
+
+    @NgModule({
+    declarations: [CustomPipe, CustomDirective],
+    imports: [CommonModule],
+    exports: [CommonModule, FormsModule, CustomPipe, CustomDirective]
+    })
+    export class SharedModule {}
+
+✅ You export what other modules can use.
+
+<h2> 🕐 Lazy Loading Modules </h2>
+
+Load feature modules only when needed, improving performance.
+
+In app-routing.module.ts:
+
+    const routes: Routes = [
+    { path: '', redirectTo: 'users', pathMatch: 'full' },
+    {
+    path: 'users',
+    loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+    }
+    ];
+
+In users/users-routing.module.ts:
+
+    const routes: Routes = [
+    { path: '', component: UsersComponent }
+    ];
+
+<h1> 🧠 2. Template-Driven Forms </h1>
+
+Used for simpler forms where logic is mostly in the template.
+
+<h2> 📥 Import FormsModule </h2>
+
+In your module:
+
+    import { FormsModule } from '@angular/forms';
+
+    @NgModule({
+    imports: [FormsModule]
+    })
+    export class AppModule {}
+
+<h2> ✍️ Using ngModel for Two-Way Binding </h2>
+
+    <input type="text" [(ngModel)]="userName" placeholder="Enter name">
+    <p>Hello {{ userName }}!</p>
+
+<h2> ✅ Form Validation </h2>
+
+Angular provides built-in validation attributes:
+
+    <form #userForm="ngForm">
+     <input name="email" ngModel required email>
+      <div *ngIf="userForm.controls.email?.invalid && userForm.controls.email?.touched">
+      <small *ngIf="userForm.controls.email?.errors?.['required']">Email is required</small>
+      <small *ngIf="userForm.controls.email?.errors?.['email']">Enter a valid email</small>
+    </div>
+    <button [disabled]="userForm.invalid">Submit</button>
+    </form>
+
+<h2> ⚠️ Error Handling </h2>
+
+You can display validation messages conditionally using touched, dirty, and invalid states.
+
+    <div *ngIf="name.invalid && name.touched" class="error">
+     Name is required!
+    </div>
+
+<h1> 🚦 3. Router Basics </h1>
+
+Angular Router lets you navigate between views (components) inside a Single Page Application (SPA).
+
+<h2> 🗺️ Setting Up Routes </h2>
+
+Create a file app-routing.module.ts:
+
+    import { NgModule } from '@angular/core';
+    import { RouterModule, Routes } from '@angular/router';
+    import { HomeComponent } from './home/home.component';
+    import { UsersComponent } from './users/users.component';
+
+    const routes: Routes = [
+     { path: '', component: HomeComponent },
+     { path: 'users', component: UsersComponent }
+    ];
+
+    @NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+    })
+    export class AppRoutingModule {}
+
+<h2> 🔗 Navigation with routerLink </h2>
+
+    <nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/users">Users</a>
+    </nav>
+
+    <router-outlet></router-outlet>
+
+    <router-outlet> is where the routed components will be displayed.
+
+<h2> 📦 Route Parameters </h2>
+
+Pass dynamic values in URLs.
+
+    const routes: Routes = [
+    { path: 'users/:id', component: UserDetailComponent }
+    ];
+
+In Template:
+
+    <a [routerLink]="['/users', user.id]">View Details</a>
+
+In Component:
+
+    import { ActivatedRoute } from '@angular/router';
+
+     constructor(private route: ActivatedRoute) {
+     this.route.params.subscribe(params => {
+    console.log(params['id']);
+     });
+    }
+ 
+<h2> 🔍 Query Parameters </h2>
+
+    <a [routerLink]="['/users']" [queryParams]="{ page: 2, sort: 'name' }">Next Page</a>
+
+In Component:
+
+    this.route.queryParams.subscribe(params => {
+    console.log(params['page']); // 2
+    });
+
+<h2> 👶 Child Routes </h2>
+
+Used for nested routing within a feature module.
+
+    const routes: Routes = [
+     {
+    path: 'users',
+    component: UsersComponent,
+    children: [
+      { path: 'details/:id', component: UserDetailComponent },
+      { path: 'settings', component: UserSettingsComponent }
+    ]
+    }
+    ];
+
+Template:
+
+    <a routerLink="details/1">User 1 Details</a>
+    <a routerLink="settings">Settings</a>
+
+    <router-outlet></router-outlet> <!-- For child components -->
+
+<h2> 📘 Summary Table </h2>
+
+<table> 
+  <tr>
+    <th>Concept</th>
+    <th>Module / Import</th>
+    <th>Key Features</th>
+  </tr>
+  
+  <tr>
+   <td>Root Module</td>
+   <td>AppModule</td> 
+   <td>Bootstraps the app</td>
+  </tr>
+
+  <tr>
+   <td>Feature Module</td>
+   <td>UsersModule</td> 
+   <td>Groups related components</td>
+  </tr>
+
+  <tr>
+   <td>Shared Module</td>
+   <td>SharedModule</td> 
+   <td>Reusable utilities</td>
+  </tr>
+
+  <tr>
+   <td>Lazy Loading</td>
+   <td>loadChildren()</td> 
+   <td>Loads on demand</td>
+  </tr>
+
+  <tr>
+   <td>Forms</td>
+   <td>FormsModule</td> 
+   <td>Template-driven forms</td>
+  </tr>
+
+  <tr>
+   <td>Routing</td>
+   <td>RouterModule</td> 
+   <td>Navigation setup</td>
+  </tr>
+
+  <tr>
+   <td>Route Params</td>
+   <td>ActivatedRoute</td> 
+   <td>Dynamic URL data</td>
+  </tr>
+
+  <tr>
+   <td>Query Params</td>
+   <td>ActivatedRoute</td> 
+   <td>Optional parameters</td>
+  </tr>
+
+  <tr>
+   <td>Child Routes</td>
+   <td>Nested Routes</td> 
+   <td>Hierarchical navigation</td>
+  </tr> 
+</table>          	  
+
+
+<br>
+
+# 🗓️ Date: 09-Oct-2025 - Angular Practice – Basics (Phase 1)
+
+This repository contains practice examples for Angular, focusing on basic components, interpolation, and real-time updates without using OnInit.
+
+<h2> 🔹 Topics Covered Today </h2>
+
+<h3> 1. Basic Angular Component </h3>
+
+  * Understanding the structure: TypeScript class, template, and styles.
+
+ * Using selector to include a component in HTML.
+
+<h3> 2. Interpolation ({{ }}) </h3> 
+
+* Displaying dynamic data from the component in the template.
+
+* Using expressions and calling lightweight methods.
+
+<h3> 3. Real-Time Components (without OnInit) </h3> 
+
+* Live Counter: increments automatically every second.
+
+* Digital Clock (optional extension).
+
+* Demonstrates practical dynamic UI updates.
+
+<h2>🔹 Examples </h2>
+
+<h3> 1️⃣ Basic Component </h3>
+
+// app.ts
+
+     export class AppComponent {
+     title = 'Angular Basics';
+     message = 'Hello, Angular!';
+     }
+
+<!-- app.html -->
+
+     <h1>{{ title }}</h1>
+     <p>{{ message }}</p>
+
+<h3> 2️⃣ Live Counter Component (No OnInit) </h3> 
+
+// live-counter.component.ts
+
+    export class LiveCounterComponent {
+    counter: number = 0;
+
+     constructor() {
+    setInterval(() => {
+      this.counter++;
+    }, 1000);
+    }
+    }
+
+<!-- live-counter.component.html -->
+
+    <div>
+    <h2>Live Counter</h2>
+    <p>{{ counter }}</p>
+    </div>
+
+<h3> 3️⃣ Interpolation & Expressions </h3>
+
+    <p>2 + 3 = {{ 2 + 3 }}</p>
+    <p>Message: {{ message + ' Have fun coding!' }}</p>
+
+<h2> 🔹 How to Run </h2>
+
+1. Clone the repository:
+
+       git clone <repo-url>
+       cd <repo-folder>
+
+2. Install dependencies:
+
+       npm install
+   
+3. Run Angular app:
+
+       ng serve
+
+
+4. Open browser at http://localhost:4200
+
+<h2> 🔹 Notes </h2>
+
+-> Interpolation is one-way binding: component → template.
+
+-> Real-time updates can be done without OnInit using constructor + setInterval.
+
+-> Components can be reused anywhere using their selector.
+              
+	     	      
+	     	      
+
+
+
+
+
+
+
+
+
+
+
