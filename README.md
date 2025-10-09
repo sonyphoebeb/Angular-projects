@@ -135,9 +135,7 @@ Example:
 
 <br>
 
-# 📘 Today's Angular Class – Phase 1 & Phase 2
-
-<h2>🗓️ Date: 04-Oct-2025 </h2>
+# 🗓️ Date: 04-Oct-2025 - Today's Angular Class (Phase 1 & Phase 2)
 
 <h2> 🚀 Phase 1: Property Binding, Event Binding & Directives </h2> 
 
@@ -536,7 +534,6 @@ Template:
 <h2> 📘 Summary Table </h2>
 
 <table> 
-
   <tr>
     <th>Concept</th>
     <th>Module / Import</th>
@@ -595,11 +592,106 @@ Template:
    <td>Child Routes</td>
    <td>Nested Routes</td> 
    <td>Hierarchical navigation</td>
-  </tr>
-  
-  
+  </tr> 
 </table>          	  
-       	      
+
+
+<br>
+
+# 🗓️ Date: 09-Oct-2025 - Angular Practice – Basics & Real-Time Components (Phase 1)
+
+This repository contains practice examples for Angular, focusing on basic components, interpolation, and real-time updates without using OnInit.
+
+<h2> 🔹 Topics Covered Today </h2>
+
+<h4> 1. Basic Angular Component </h4>
+
+Understanding the structure: TypeScript class, template, and styles.
+
+Using selector to include a component in HTML.
+
+<h4> 2. Interpolation ({{ }}) </h4> 
+
+Displaying dynamic data from the component in the template.
+
+Using expressions and calling lightweight methods.
+
+<h4> 3. Real-Time Components (without OnInit) </h4> 
+
+Live Counter: increments automatically every second.
+
+Digital Clock (optional extension).
+
+Demonstrates practical dynamic UI updates.
+
+<h2>🔹 Examples </h2>
+
+<h3> 1️⃣ Basic Component </h3>
+
+// app.ts
+
+     export class AppComponent {
+     title = 'Angular Basics';
+     message = 'Hello, Angular!';
+     }
+
+<!-- app.html -->
+
+     <h1>{{ title }}</h1>
+     <p>{{ message }}</p>
+
+<h3> 2️⃣ Live Counter Component (No OnInit) </h3> 
+
+// live-counter.component.ts
+
+    export class LiveCounterComponent {
+    counter: number = 0;
+
+     constructor() {
+    setInterval(() => {
+      this.counter++;
+    }, 1000);
+    }
+    }
+
+<!-- live-counter.component.html -->
+
+    <div>
+    <h2>Live Counter</h2>
+    <p>{{ counter }}</p>
+    </div>
+
+<h3> 3️⃣ Interpolation & Expressions </h3>
+
+    <p>2 + 3 = {{ 2 + 3 }}</p>
+    <p>Message: {{ message + ' Have fun coding!' }}</p>
+
+<h2> 🔹 How to Run </h2>
+
+1. Clone the repository:
+
+       git clone <repo-url>
+       cd <repo-folder>
+
+2. Install dependencies:
+
+       npm install
+   
+3. Run Angular app:
+
+       ng serve
+
+
+4. Open browser at http://localhost:4200
+
+<h2> 🔹 Notes </h2>
+
+-> Interpolation is one-way binding: component → template.
+
+-> Real-time updates can be done without OnInit using constructor + setInterval.
+
+-> Components can be reused anywhere using their selector.
+              
 	     	      
 	     	      
 
