@@ -606,9 +606,11 @@ This repository contains practice examples for Angular, focusing on basic compon
 
 <h3> 1. Basic Angular Component </h3>
 
-Understanding the structure: TypeScript class, template, and styles.
+<pre>
+  Understanding the structure: TypeScript class, template, and styles.
 
-Using selector to include a component in HTML.
+  Using selector to include a component in HTML.
+</pre> 
 
 <h3> 2. Interpolation ({{ }}) </h3> 
 
