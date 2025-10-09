@@ -4,10 +4,11 @@ import { CustomersList } from '../customers/customers-list/customers-list';
 import { Calculations } from '../mathFunctions/calculations/calculations';
 import { About } from './users/about/about';
 import { NavBar } from '../layout/nav-bar/nav-bar';
+import { LiveCounter } from '../counter/live-counter/live-counter';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CustomersList, Calculations, About, NavBar],
+  imports: [RouterOutlet, CustomersList, Calculations, About, NavBar, LiveCounter],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

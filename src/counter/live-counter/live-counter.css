@@ -1,0 +1,22 @@
+/* live-counter.component.css */
+.counter {
+    border: 1px solid #ddd;
+    padding: 16px;
+    width: 150px;
+    text-align: center;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    background-color: #fefefe;
+  }
+  
+  h2 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e74c3c;
+  }
+  
