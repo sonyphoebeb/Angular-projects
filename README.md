@@ -598,25 +598,25 @@ Template:
 
 <br>
 
-# 🗓️ Date: 09-Oct-2025 - Angular Practice – Basics & Real-Time Components (Phase 1)
+# 🗓️ Date: 09-Oct-2025 - Angular Practice – Basics (Phase 1)
 
 This repository contains practice examples for Angular, focusing on basic components, interpolation, and real-time updates without using OnInit.
 
 <h2> 🔹 Topics Covered Today </h2>
 
-<h4> 1. Basic Angular Component </h4>
+<h3> 1. Basic Angular Component </h3>
 
 Understanding the structure: TypeScript class, template, and styles.
 
 Using selector to include a component in HTML.
 
-<h4> 2. Interpolation ({{ }}) </h4> 
+<h3> 2. Interpolation ({{ }}) </h3> 
 
 Displaying dynamic data from the component in the template.
 
 Using expressions and calling lightweight methods.
 
-<h4> 3. Real-Time Components (without OnInit) </h4> 
+<h3> 3. Real-Time Components (without OnInit) </h3> 
 
 Live Counter: increments automatically every second.
 
