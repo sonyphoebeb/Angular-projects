@@ -7,11 +7,12 @@ import { NavBar } from '../layout/nav-bar/nav-bar';
 import { LiveCounter } from '../counter/live-counter/live-counter';
 import { LightSwitch } from '../light-switch/light-switch';
 import { EventBinding } from '../event-binding/event-binding';
+import { UserProfile } from '../user-profile/user-profile';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, CustomersList, Calculations, About, 
-    NavBar, LiveCounter, LightSwitch, EventBinding],
+    NavBar, LiveCounter, LightSwitch, EventBinding, UserProfile],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

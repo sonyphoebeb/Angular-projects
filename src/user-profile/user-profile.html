@@ -1,0 +1,25 @@
+ 
+ <!-- user-profile.component.html -->
+<div style="max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
+    <h2>User Profile</h2>
+    
+    <label>
+      Name:
+      <input type="text" [(ngModel)]="user.name" placeholder="Enter your name" />
+    </label>
+    <br /><br />
+    
+    <label>
+      Email:
+      <input type="email" [(ngModel)]="user.email" placeholder="Enter your email" />
+    </label>
+    <br /><br />
+    
+    <button (click)="saveProfile()">Save</button>
+  
+    <hr />
+    <h3>Live Preview:</h3>
+    <p><strong>Name:</strong> {{ user.name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+  </div>
+  
