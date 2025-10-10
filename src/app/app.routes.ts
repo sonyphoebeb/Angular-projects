@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { NavBar } from '../layout/nav-bar/nav-bar';
 import { Calculations } from '../mathFunctions/calculations/calculations';
+import { LiveCounter } from '../counter/live-counter/live-counter';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'calculator', pathMatch: 'full' },
@@ -10,4 +11,5 @@ export const routes: Routes = [
     { path: 'lifecycle-hooks', 
         loadChildren: () => import('../lifecycle-hooks/lifecycle-hooks-module').then(m => m.LifecycleHooksModule) },
     { path: 'nav-bar', component: NavBar },
+    { path: 'live-counter', component: LiveCounter}
 ];
