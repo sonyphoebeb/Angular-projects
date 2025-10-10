@@ -695,15 +695,15 @@ This repository contains practice examples for Angular, focusing on basic compon
 	     	      
 <br>
 
-# 🗓️ Date: 10-Oct-2025 - Angular Data Binding Practice (Phase 1)	     	      
+# 🗓️ Date: 10-Oct-2025 - Angular Data Binding Practice	     	      
 
 This repository contains simple examples demonstrating the three main types of data binding in Angular:
 
-1. Property Binding
+<h3> 1. Property Binding </h3>
 
-2. Event Binding
+<h3> 2. Event Binding </h3>
 
-3. Two-way Binding
+<h3> 3. Two-way Binding </h3>
 
 These examples are designed for beginners to understand how Angular synchronizes data between the component and the template.
 
