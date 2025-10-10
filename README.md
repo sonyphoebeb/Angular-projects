@@ -724,92 +724,89 @@ Example: Button enable/disable based on a component property.
 
 Explanation:
 
-    [disabled] binds the button’s disabled property to the isDisabled variable.
+* [disabled] binds the button’s disabled property to the isDisabled variable.
 
-    Updating isDisabled in the component will automatically enable/disable the button.
+* Updating isDisabled in the component will automatically enable/disable the button.
 
-🔹 2. Event Binding
+<h2> 🔹 2. Event Binding </h2>
 
 Event binding allows you to listen to events like clicks, input changes, or mouse events in the template and call methods in your component.
 
 Example: Button click event.
 
 // app.component.ts
-export class AppComponent {
-  message = '';
 
-  showMessage() {
+    export class AppComponent {
+    message = '';
+
+    showMessage() {
     this.message = 'Hello, Angular!';
-  }
-}
+    }
+   }
 
 <!-- app.component.html -->
-<button (click)="showMessage()">Click Me</button>
-<p>{{ message }}</p>
-
+    <button (click)="showMessage()">Click Me</button>
+    <p>{{ message }}</p>
 
 Explanation:
 
-(click) binds the button click event to the showMessage() method.
+* (click) binds the button click event to the showMessage() method.
 
-When clicked, the message is updated in the component and reflected in the template.
+* When clicked, the message is updated in the component and reflected in the template.
 
-🔹 3. Two-way Binding
+<h2> 🔹 3. Two-way Binding </h2>
 
 Two-way binding allows automatic synchronization between the component property and the template input field using [(ngModel)].
 
 Example: User Profile Form
 
 // user-profile.component.ts
-export class UserProfileComponent {
-  user = {
+
+    export class UserProfileComponent {
+    user = {
     name: 'Sony',
     email: 'sony@example.com'
-  };
-}
+     };
+    }
 
 <!-- user-profile.component.html -->
-<label>Name:</label>
-<input type="text" [(ngModel)]="user.name" placeholder="Enter name" />
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="user.name" placeholder="Enter name" />
 
-<label>Email:</label>
-<input type="email" [(ngModel)]="user.email" placeholder="Enter email" />
+    <label>Email:</label>
+    <input type="email" [(ngModel)]="user.email" placeholder="Enter email" />
 
-<p><strong>Preview:</strong> {{ user.name }} - {{ user.email }}</p>
-
+    <p><strong>Preview:</strong> {{ user.name }} - {{ user.email }}</p>
 
 Explanation:
 
-[(ngModel)] binds the input field to the user object.
+* [(ngModel)] binds the input field to the user object.
 
-Changes in the input field automatically update the component, and vice versa.
+* Changes in the input field automatically update the component, and vice versa.
 
-⚡ How to Run
+<h2> ⚡ How to Run </h2>
 
-Clone the repository:
+1. Clone the repository:
 
-git clone <repo-url>
+       git clone <repo-url>
 
+2. Install dependencies:
 
-Install dependencies:
+       npm install
 
-npm install
+3. Run the application:
 
+       ng serve
 
-Run the application:
+4. Open the app in your browser: http://localhost:4200
 
-ng serve
+<h2> 💡 Key Takeaways </h2>
 
+* Property Binding: Component → Template
 
-Open the app in your browser: http://localhost:4200
+* Event Binding: Template → Component
 
-💡 Key Takeaways
-
-Property Binding: Component → Template
-
-Event Binding: Template → Component
-
-Two-way Binding: Component ↔ Template
+* Two-way Binding: Component ↔ Template
 
 These three types of binding form the core of interactive Angular applications.
 
