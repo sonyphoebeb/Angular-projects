@@ -699,34 +699,34 @@ This repository contains practice examples for Angular, focusing on basic compon
 
 This repository contains simple examples demonstrating the three main types of data binding in Angular:
 
-Property Binding
+1. Property Binding
 
-Event Binding
+2. Event Binding
 
-Two-way Binding
+3. Two-way Binding
 
 These examples are designed for beginners to understand how Angular synchronizes data between the component and the template.
 
-🔹 1. Property Binding
+<h2> 🔹 1. Property Binding </h2>
 
 Property binding allows you to set the value of an HTML element property dynamically from the component.
 
 Example: Button enable/disable based on a component property.
 
 // app.component.ts
-export class AppComponent {
-  isDisabled = true;
-}
+
+    export class AppComponent {
+    isDisabled = true;
+    }
 
 <!-- app.component.html -->
-<button [disabled]="isDisabled">Click Me</button>
-
+    <button [disabled]="isDisabled">Click Me</button>
 
 Explanation:
 
-[disabled] binds the button’s disabled property to the isDisabled variable.
+    [disabled] binds the button’s disabled property to the isDisabled variable.
 
-Updating isDisabled in the component will automatically enable/disable the button.
+    Updating isDisabled in the component will automatically enable/disable the button.
 
 🔹 2. Event Binding
 
