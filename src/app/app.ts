@@ -6,10 +6,12 @@ import { About } from './users/about/about';
 import { NavBar } from '../layout/nav-bar/nav-bar';
 import { LiveCounter } from '../counter/live-counter/live-counter';
 import { LightSwitch } from '../light-switch/light-switch';
+import { EventBinding } from '../event-binding/event-binding';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CustomersList, Calculations, About, NavBar, LiveCounter, LightSwitch],
+  imports: [RouterOutlet, CustomersList, Calculations, About, 
+    NavBar, LiveCounter, LightSwitch, EventBinding],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

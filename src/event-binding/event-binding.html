@@ -1,0 +1,27 @@
+
+<div class="container">
+    <h2>Angular Event Binding Demo</h2>
+  
+    <input
+      type="text"
+      placeholder="Type something..."
+      (input)="onInput($event)"
+      (keyup)="onKeyUp($event)"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+    />
+  
+    <p>Current Input: <strong>{{ message }}</strong></p>
+  
+    <button (click)="onClick()">Click</button>
+    <button (dblclick)="onDoubleClick()">Double Click</button>
+    <button (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">Hover Me</button>
+    <button (click)="clearLog()">Clear Log</button>
+  
+    <hr />
+    <h4>Event Log:</h4>
+    <ul>
+      <li *ngFor="let item of log">{{ item }}</li>
+    </ul>
+  </div>
+  
