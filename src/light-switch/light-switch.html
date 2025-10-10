@@ -1,0 +1,8 @@
+
+<!-- light-switch.component.html -->
+<div class="container">
+    <h2>Light Switch</h2>
+    <p>The light is <strong [style.color]="isOn ? 'green' : 'red'">{{ isOn ? 'ON' : 'OFF' }}</strong></p>
+    <button (click)="toggleLight()">Toggle Light</button>
+  </div>
+  

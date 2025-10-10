@@ -5,10 +5,11 @@ import { Calculations } from '../mathFunctions/calculations/calculations';
 import { About } from './users/about/about';
 import { NavBar } from '../layout/nav-bar/nav-bar';
 import { LiveCounter } from '../counter/live-counter/live-counter';
+import { LightSwitch } from '../light-switch/light-switch';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CustomersList, Calculations, About, NavBar, LiveCounter],
+  imports: [RouterOutlet, CustomersList, Calculations, About, NavBar, LiveCounter, LightSwitch],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
