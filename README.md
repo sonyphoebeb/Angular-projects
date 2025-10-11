@@ -815,6 +815,97 @@ These three types of binding form the core of interactive Angular applications.
 
 # 🗓️ Date: 11-Oct-2025 - Angular Data Directives Practice	
 
+🌿 Angular Directives Practice – Structural & Attribute
+
+This project demonstrates the use of Structural and Attribute directives in Angular with simple, real-world examples.
+It helps you understand how Angular manipulates the DOM dynamically using built-in directives.
+
+🧱 Topics Covered
+Phase 1 – Structural Directives
+
+Structural directives change the layout of the DOM by adding, removing, or manipulating elements.
+
+🧩 1. *ngIf
+
+Conditionally adds or removes elements from the DOM.
+
+Example: Displaying a message only when a variable is true.
+
+🌀 2. *ngFor
+
+Repeats a portion of the HTML for each item in an array.
+
+Example: Rendering a list of students, products, or tasks dynamically.
+
+🔄 3. *ngSwitch
+
+Displays one element from multiple choices based on a condition.
+
+Example: Showing a different message or UI section based on user selection.
+
+Phase 2 – Attribute Directives
+
+Attribute directives change the appearance or behavior of an existing element, component, or directive.
+
+🎨 4. ngClass
+
+Dynamically adds or removes CSS classes based on component logic.
+
+Example: Toggle between “active” and “highlight” classes on button click.
+
+💅 5. ngStyle
+
+Dynamically applies inline styles to elements.
+
+Example: Change text color, background color, or font size dynamically.
+
+🧠 Key Learning Points
+
+✅ Understand how Angular directives work under the hood.
+✅ Learn when to use Structural vs Attribute directives.
+✅ Practice dynamic DOM manipulation in real-time.
+✅ Implement reusable, interactive UI patterns.
+
+⚙️ Steps to Run
+
+Create a new Angular project:
+
+ng new directives-demo
+cd directives-demo
+
+
+Generate required components:
+
+ng g c structural-directives
+ng g c attribute-directives
+
+
+Add component selectors in app.component.html:
+
+<app-structural-directives></app-structural-directives>
+<app-attribute-directives></app-attribute-directives>
+
+
+Run the app:
+
+ng serve
+
+
+Open your browser and visit:
+👉 http://localhost:4200
+
+🖼️ Example Output
+
+✅ ngIf → Toggle content visibility
+
+✅ ngFor → Display dynamic list of data
+
+✅ ngSwitch → Conditional UI display
+
+✅ ngClass → Dynamic class toggling
+
+✅ ngStyle → Apply inline style dynamically
+
 
 
 
