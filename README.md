@@ -842,36 +842,35 @@ Displays one element from multiple choices based on a condition.
 
 Example: Showing a different message or UI section based on user selection.
 
-Phase 2 – Attribute Directives
+<h3> 2 – Attribute Directives </h3> 
 
 Attribute directives change the appearance or behavior of an existing element, component, or directive.
 
-🎨 4. ngClass
+<h4> 🎨 4. ngClass </h4> 
 
 Dynamically adds or removes CSS classes based on component logic.
 
 Example: Toggle between “active” and “highlight” classes on button click.
 
-💅 5. ngStyle
+<h4> 💅 5. ngStyle </h4> 
 
 Dynamically applies inline styles to elements.
 
 Example: Change text color, background color, or font size dynamically.
 
-🧠 Key Learning Points
+<h2> 🧠 Key Learning Points </h2> 
 
 ✅ Understand how Angular directives work under the hood.
 ✅ Learn when to use Structural vs Attribute directives.
 ✅ Practice dynamic DOM manipulation in real-time.
 ✅ Implement reusable, interactive UI patterns.
 
-⚙️ Steps to Run
+<h2> ⚙️ Steps to Run </h2> 
 
 Create a new Angular project:
 
 ng new directives-demo
 cd directives-demo
-
 
 Generate required components:
 
@@ -889,8 +888,8 @@ Run the app:
 
 ng serve
 
-
 Open your browser and visit:
+
 👉 http://localhost:4200
 
 🖼️ Example Output
