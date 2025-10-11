@@ -6,6 +6,7 @@ import { LightSwitch } from '../light-switch/light-switch';
 import { EventBinding } from '../event-binding/event-binding';
 import { UserProfile } from '../user-profile/user-profile';
 import { StructuralDirectives } from '../structural-directives/structural-directives';
+import { AttributeDirectives } from '../attribute-directives/attribute-directives';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'calculator', pathMatch: 'full' },
@@ -19,5 +20,6 @@ export const routes: Routes = [
     { path: 'light-switch', component: LightSwitch},
     { path: 'event-binding', component: EventBinding},
     { path: 'user-profile', component: UserProfile},    
-    { path: 'structural-directives', component: StructuralDirectives}
+    { path: 'structural-directives', component: StructuralDirectives},
+    { path: 'attribute-directives', component: AttributeDirectives},
 ];

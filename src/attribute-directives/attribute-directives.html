@@ -1,0 +1,40 @@
+
+<div class="container">
+    <h1>🎨 Angular Attribute Directives Demo</h1>
+  
+    <!-- ngClass Example -->
+    <section>
+      <h2>ngClass Example</h2>
+      <button (click)="toggleClasses()">Toggle Classes</button>
+  
+      <p [ngClass]="{ 'active': isActive, 'highlight': isHighlighted }">
+        This paragraph changes style dynamically with <b>ngClass</b> 🎯
+      </p>
+    </section>
+  
+    <hr>
+  
+    <!-- ngStyle Example -->
+    <section>
+      <h2>ngStyle Example</h2>
+  
+      <div
+        [ngStyle]="{
+          'color': textColor,
+          'font-size': fontSize,
+          'background-color': backgroundColor
+        }"
+        class="styled-box"
+      >
+        This box uses <b>ngStyle</b> to dynamically apply inline styles ✨
+      </div>
+  
+      <div class="controls">
+        <button (click)="increaseFont()">Increase Font</button>
+        <button (click)="changeTheme('blue')">Blue Theme</button>
+        <button (click)="changeTheme('white')">White Theme</button>
+        <button (click)="changeTheme('green')">Green Theme</button>
+      </div>
+    </section>
+  </div>
+  

@@ -9,12 +9,13 @@ import { LightSwitch } from '../light-switch/light-switch';
 import { EventBinding } from '../event-binding/event-binding';
 import { UserProfile } from '../user-profile/user-profile';
 import { StructuralDirectives } from '../structural-directives/structural-directives';
+import { AttributeDirectives } from '../attribute-directives/attribute-directives';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, CustomersList, Calculations, About, 
     NavBar, LiveCounter, LightSwitch, EventBinding, UserProfile,
-    StructuralDirectives],
+    StructuralDirectives, AttributeDirectives],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
