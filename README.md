@@ -813,31 +813,30 @@ These three types of binding form the core of interactive Angular applications.
 
 <br>
 
-# 🗓️ Date: 11-Oct-2025 - Angular Data Directives Practice	
-
-🌿 Angular Directives Practice – Structural & Attribute
+# 🗓️ Date: 11-Oct-2025 - 🌿 Angular Directives Practice – Structural & Attribute	
 
 This project demonstrates the use of Structural and Attribute directives in Angular with simple, real-world examples.
 It helps you understand how Angular manipulates the DOM dynamically using built-in directives.
 
-🧱 Topics Covered
-Phase 1 – Structural Directives
+<h2> 🧱 Topics Covered </h2> 
+
+<h3> 1 – Structural Directives </h3> 
 
 Structural directives change the layout of the DOM by adding, removing, or manipulating elements.
 
-🧩 1. *ngIf
+<h4> 🧩 1. *ngIf </h4> 
 
 Conditionally adds or removes elements from the DOM.
 
 Example: Displaying a message only when a variable is true.
 
-🌀 2. *ngFor
+<h4> 🌀 2. *ngFor </h4> 
 
 Repeats a portion of the HTML for each item in an array.
 
 Example: Rendering a list of students, products, or tasks dynamically.
 
-🔄 3. *ngSwitch
+<h4> 🔄 3. *ngSwitch </h4> 
 
 Displays one element from multiple choices based on a condition.
 
