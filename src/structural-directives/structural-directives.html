@@ -1,0 +1,49 @@
+
+<div class="container">
+    <h1>🌿 Angular Structural Directives Demo</h1>
+  
+    <!-- *ngIf Example -->
+    <section>
+      <h2>*ngIf Example</h2>
+      <button (click)="toggleLogin()">Toggle Login</button>
+      <p *ngIf="isLoggedIn; else guestMessage">Welcome Back, User!</p>
+  
+      <ng-template #guestMessage>
+        <p>Please log in to continue.</p>
+      </ng-template>
+    </section>
+  
+    <hr>
+  
+    <!-- *ngFor Example -->
+    <section>
+      <h2>*ngFor Example</h2>
+      <ul>
+        <li *ngFor="let product of products; index as i">
+          {{ i + 1 }}. {{ product }}
+        </li>
+      </ul>
+    </section>
+  
+    <hr>
+  
+    <!-- *ngSwitch Example -->
+    <section>
+      <h2>*ngSwitch Example</h2>
+      <label for="daySelect">Select Day:</label>
+      <select id="daySelect" (change)="onDayChange($event)">
+        <option>Monday</option>
+        <option>Wednesday</option>
+        <option>Friday</option>
+        <option>Sunday</option>
+      </select>
+  
+      <div [ngSwitch]="day" class="switch-box">
+        <p *ngSwitchCase="'Monday'">Start of the week! Let's go! 💪</p>
+        <p *ngSwitchCase="'Wednesday'">Midweek motivation 🌻</p>
+        <p *ngSwitchCase="'Friday'">Almost weekend! 🎉</p>
+        <p *ngSwitchDefault>Enjoy your day! ☀️</p>
+      </div>
+    </section>
+  </div>
+  

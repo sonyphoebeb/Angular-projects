@@ -8,11 +8,13 @@ import { LiveCounter } from '../counter/live-counter/live-counter';
 import { LightSwitch } from '../light-switch/light-switch';
 import { EventBinding } from '../event-binding/event-binding';
 import { UserProfile } from '../user-profile/user-profile';
+import { StructuralDirectives } from '../structural-directives/structural-directives';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, CustomersList, Calculations, About, 
-    NavBar, LiveCounter, LightSwitch, EventBinding, UserProfile],
+    NavBar, LiveCounter, LightSwitch, EventBinding, UserProfile,
+    StructuralDirectives],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
