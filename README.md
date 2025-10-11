@@ -861,8 +861,11 @@ Dynamically applies inline styles to elements.
 <h2> 🧠 Key Learning Points </h2> 
 
 ✅ Understand how Angular directives work under the hood.
+
 ✅ Learn when to use Structural vs Attribute directives.
+
 ✅ Practice dynamic DOM manipulation in real-time.
+
 ✅ Implement reusable, interactive UI patterns.
 
 <h2> ⚙️ Steps to Run </h2> 
