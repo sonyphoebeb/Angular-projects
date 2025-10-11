@@ -846,17 +846,17 @@ Displays one element from multiple choices based on a condition.
 
 Attribute directives change the appearance or behavior of an existing element, component, or directive.
 
-<h4> 🎨 4. ngClass </h4> 
+<h4> 🎨 ngClass </h4> 
 
 Dynamically adds or removes CSS classes based on component logic.
 
-Example: Toggle between “active” and “highlight” classes on button click.
+    Example: Toggle between “active” and “highlight” classes on button click.
 
-<h4> 💅 5. ngStyle </h4> 
+<h4> 💅 ngStyle </h4> 
 
 Dynamically applies inline styles to elements.
 
-Example: Change text color, background color, or font size dynamically.
+    Example: Change text color, background color, or font size dynamically.
 
 <h2> 🧠 Key Learning Points </h2> 
 
@@ -867,32 +867,30 @@ Example: Change text color, background color, or font size dynamically.
 
 <h2> ⚙️ Steps to Run </h2> 
 
-Create a new Angular project:
+1. Create a new Angular project:
 
-ng new directives-demo
-cd directives-demo
+       ng new directives-demo
+       cd directives-demo
 
-Generate required components:
+2. Generate required components:
 
-ng g c structural-directives
-ng g c attribute-directives
+       ng g c structural-directives
+       ng g c attribute-directives
 
+3. Add component selectors in app.component.html:
 
-Add component selectors in app.component.html:
+       <app-structural-directives></app-structural-directives>
+       <app-attribute-directives></app-attribute-directives>
 
-<app-structural-directives></app-structural-directives>
-<app-attribute-directives></app-attribute-directives>
+4. Run the app:
 
+       ng serve
 
-Run the app:
+5. Open your browser and visit:
 
-ng serve
+       👉 http://localhost:4200
 
-Open your browser and visit:
-
-👉 http://localhost:4200
-
-🖼️ Example Output
+<h2> 🖼️ Example Output </h2> 
 
 ✅ ngIf → Toggle content visibility
 
