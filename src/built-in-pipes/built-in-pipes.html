@@ -1,0 +1,19 @@
+
+<h2>🧩 Angular Built-in Pipes Demo</h2>
+
+<p><b>Original Name:</b> {{ name }}</p>
+<p><b>Uppercase:</b> {{ name | uppercase }}</p>
+<p><b>Lowercase:</b> {{ name | lowercase }}</p>
+<p><b>Title Case:</b> {{ name | titlecase }}</p>
+
+<p><b>Today's Date:</b> {{ today | date:'fullDate' }}</p>
+<p><b>Short Date:</b> {{ today | date:'shortDate' }}</p>
+
+<p><b>Price:</b> {{ price | currency:'INR' }}</p>
+<p><b>Decimal:</b> {{ value | number:'1.1-2' }}</p>
+<p><b>Percentage:</b> {{ score | percent }}</p>
+
+<p><b>Items (Sliced):</b> {{ items | slice:1:3 }}</p>
+
+<p><b>JSON Data:</b></p>
+<pre>{{ user | json }}</pre>
