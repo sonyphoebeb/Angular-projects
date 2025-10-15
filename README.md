@@ -911,12 +911,13 @@ Dynamically applies inline styles to elements.
 
 # 🗓️ Date: 15-Oct-2025 - 🧩 Angular Built-in Pipes Practice
 
-🔹 Overview
+<h2> 🔹 Overview </h2>
 
 This module demonstrates the use of Built-in Pipes in Angular.
+
 Pipes are used to transform data directly in the template without changing the component’s logic.
 
-🔹 Covered Pipes
+<h2></h2>🔹 Covered Pipes
 Pipe	Description	Example Usage
 uppercase	Converts text to uppercase	`{{ name
 lowercase	Converts text to lowercase	`{{ name
@@ -927,41 +928,51 @@ number	Formats a number according to digit info	`{{ value
 percent	Converts a number to a percentage	`{{ score
 slice	Returns a section of an array	`{{ items
 json	Converts object into a JSON string	`{{ user
-🧠 Concept Summary
 
-Pipes are declared using the | (pipe) symbol in Angular templates.
-They help in transforming data formats dynamically without altering the actual data in the component.
+<h2> 🧠 Concept Summary </h2> 
 
-🧩 Example Output
+* Pipes are declared using the | (pipe) symbol in Angular templates.
+
+* They help in transforming data formats dynamically without altering the actual data in the component.
+
+<h2> 🧩 Example Output </h2> 
 
 The demo displays:
 
-User name in various formats (uppercase, lowercase, titlecase).
+    1. User name in various formats (uppercase, lowercase, titlecase).
 
-Current date in different formats.
+    2. Current date in different formats.
 
-Prices and numbers formatted as currency and percentages.
+    3. Prices and numbers formatted as currency and percentages.
 
-JSON representation of an object.
+    4. JSON representation of an object.
 
-Partial list of items using slice.
+    5. Partial list of items using slice.
 
-📁 Folder Structure
+<h2> 📁 Folder Structure </h2> 
+
 src/
+
  └── app/
+ 
       └── pipes-demo/
+      
           ├── pipes-demo.component.ts
+          
           ├── pipes-demo.component.html
+          
           ├── pipes-demo.component.css
 
-🎨 Styling
+<h3> 🎨 Styling </h3> 
 
 The component is styled with a simple and elegant CSS layout for better readability and presentation.
 
-🧾 Summary
+<h2> 🧾 Summary </h2>
 
 ✅ Practiced: Built-in Pipes
+
 ✅ Concepts: Data Transformation in Templates
+
 ✅ Tools Used: Angular CLI, TypeScript, HTML, CSS
 
 
