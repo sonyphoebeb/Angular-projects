@@ -917,7 +917,8 @@ This module demonstrates the use of Built-in Pipes in Angular.
 
 Pipes are used to transform data directly in the template without changing the component’s logic.
 
-<h2></h2>🔹 Covered Pipes
+<h2>🔹 Covered Pipes </h2>
+
 Pipe	Description	Example Usage
 uppercase	Converts text to uppercase	`{{ name
 lowercase	Converts text to lowercase	`{{ name
