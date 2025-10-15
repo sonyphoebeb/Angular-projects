@@ -919,16 +919,58 @@ Pipes are used to transform data directly in the template without changing the c
 
 <h2>🔹 Covered Pipes </h2>
 
-Pipe	Description	Example Usage
-uppercase	Converts text to uppercase	`{{ name
-lowercase	Converts text to lowercase	`{{ name
-titlecase	Converts the first letter of each word to uppercase	`{{ name
-date	Formats date values	`{{ today
-currency	Formats a number as a currency	`{{ price
-number	Formats a number according to digit info	`{{ value
-percent	Converts a number to a percentage	`{{ score
-slice	Returns a section of an array	`{{ items
-json	Converts object into a JSON string	`{{ user
+<table border="1" cellspacing="0" cellpadding="6">
+  <tr>
+    <th>Pipe</th>
+    <th>Description</th>
+    <th>Example Usage</th>
+  </tr>
+  <tr>
+    <td>uppercase</td>
+    <td>Converts text to uppercase</td>
+    <td>{{ name | uppercase }}</td>
+  </tr>
+  <tr>
+    <td>lowercase</td>
+    <td>Converts text to lowercase</td>
+    <td>{{ name | lowercase }}</td>
+  </tr>
+  <tr>
+    <td>titlecase</td>
+    <td>Converts the first letter of each word to uppercase</td>
+    <td>{{ name | titlecase }}</td>
+  </tr>
+  <tr>
+    <td>date</td>
+    <td>Formats date values</td>
+    <td>{{ today | date:'fullDate' }}</td>
+  </tr>
+  <tr>
+    <td>currency</td>
+    <td>Formats a number as a currency</td>
+    <td>{{ price | currency:'INR' }}</td>
+  </tr>
+  <tr>
+    <td>number</td>
+    <td>Formats a number according to digit info</td>
+    <td>{{ value | number:'1.2-2' }}</td>
+  </tr>
+  <tr>
+    <td>percent</td>
+    <td>Converts a number to a percentage</td>
+    <td>{{ score | percent }}</td>
+  </tr>
+  <tr>
+    <td>slice</td>
+    <td>Returns a section of an array</td>
+    <td>{{ items | slice:1:3 }}</td>
+  </tr>
+  <tr>
+    <td>json</td>
+    <td>Converts object into a JSON string</td>
+    <td>{{ user | json }}</td>
+  </tr>
+</table>
 
 <h2> 🧠 Concept Summary </h2> 
 
