@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class BuiltInPipes {
 
+  name = 'sony selvaraj';
+  today = new Date();
+  price = 2999.99;
+  value = 12345.6789;
+  score = 0.875;
+  items = ['Angular', 'React', 'Vue', 'Svelte'];
+  user = { name: 'Sony', role: 'Developer', location: 'India' };
+
 }
