@@ -907,6 +907,61 @@ Dynamically applies inline styles to elements.
 
 
 
+<br>
 
+# 🗓️ Date: 15-Oct-2025 - 🧩 Angular Built-in Pipes Practice
+
+🔹 Overview
+
+This module demonstrates the use of Built-in Pipes in Angular.
+Pipes are used to transform data directly in the template without changing the component’s logic.
+
+🔹 Covered Pipes
+Pipe	Description	Example Usage
+uppercase	Converts text to uppercase	`{{ name
+lowercase	Converts text to lowercase	`{{ name
+titlecase	Converts the first letter of each word to uppercase	`{{ name
+date	Formats date values	`{{ today
+currency	Formats a number as a currency	`{{ price
+number	Formats a number according to digit info	`{{ value
+percent	Converts a number to a percentage	`{{ score
+slice	Returns a section of an array	`{{ items
+json	Converts object into a JSON string	`{{ user
+🧠 Concept Summary
+
+Pipes are declared using the | (pipe) symbol in Angular templates.
+They help in transforming data formats dynamically without altering the actual data in the component.
+
+🧩 Example Output
+
+The demo displays:
+
+User name in various formats (uppercase, lowercase, titlecase).
+
+Current date in different formats.
+
+Prices and numbers formatted as currency and percentages.
+
+JSON representation of an object.
+
+Partial list of items using slice.
+
+📁 Folder Structure
+src/
+ └── app/
+      └── pipes-demo/
+          ├── pipes-demo.component.ts
+          ├── pipes-demo.component.html
+          ├── pipes-demo.component.css
+
+🎨 Styling
+
+The component is styled with a simple and elegant CSS layout for better readability and presentation.
+
+🧾 Summary
+
+✅ Practiced: Built-in Pipes
+✅ Concepts: Data Transformation in Templates
+✅ Tools Used: Angular CLI, TypeScript, HTML, CSS
 
 
