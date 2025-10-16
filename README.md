@@ -1019,3 +1019,96 @@ The component is styled with a simple and elegant CSS layout for better readabil
 ✅ Tools Used: Angular CLI, TypeScript, HTML, CSS
 
 
+
+
+
+
+Angular Assignments
+
+This repository contains Angular practice assignments demonstrating key concepts like directives, data binding, and built-in pipes.
+
+📝 Assignments Overview
+Assignment 1: Directives Demo
+
+Objective: Create a component that demonstrates all Angular structural and attribute directives.
+
+Features Implemented:
+
+*ngIf → Conditional rendering
+
+*ngFor → Looping through arrays
+
+*ngSwitch → Conditional switching
+
+[ngClass] → Dynamic class binding
+
+[ngStyle] → Dynamic inline styles
+
+Assignment 2: Data Binding
+
+Objective: Demonstrate data binding techniques in Angular with a proper model execution.
+
+Features Implemented:
+
+Interpolation → Displaying component data in templates
+
+Property Binding → Binding HTML element properties
+
+Event Binding → Handling user events
+
+Two-way Binding → Synchronizing input fields with component data using [(ngModel)]
+
+Assignment 3: Built-in Pipes Demo
+
+Objective: Create a component to demonstrate all Angular built-in pipes using different data types.
+
+Features Implemented:
+
+DatePipe → Format dates
+
+UpperCasePipe / LowerCasePipe / TitleCasePipe → String formatting
+
+CurrencyPipe / DecimalPipe / PercentPipe → Number formatting
+
+JsonPipe → Display objects as JSON
+
+SlicePipe → Array slicing
+
+UI Features:
+
+Table format with example, output, and data type columns
+
+Color-coded data type labels with icons for better visualization
+
+🔗 Technologies Used
+
+Angular 15+
+
+HTML5 & CSS3
+
+TypeScript
+
+📂 Folder Structure (Sample)
+angular-assignments/
+│
+├── assignment1-directives/
+│   └── directives-demo.component.ts/html/css
+│
+├── assignment2-databinding/
+│   └── data-binding.component.ts/html/css
+│
+├── assignment3-pipes/
+│   └── pipes-assignment.component.ts/html/css
+│
+└── README.md
+
+🎯 Key Learning Outcomes
+
+Understanding and implementing Angular directives.
+
+Practicing data binding techniques for dynamic templates.
+
+Using built-in pipes effectively for data transformation.
+
+Structuring components with proper separation of logic and UI.
+
