@@ -12,13 +12,14 @@ import { StructuralDirectives } from '../structural-directives/structural-direct
 import { AttributeDirectives } from '../attribute-directives/attribute-directives';
 import { BuiltInPipes } from '../built-in-pipes/built-in-pipes';
 import { DirectivesAssignment } from '../directives-assignment/directives-assignment';
+import { DataBindingAssignment } from '../data-binding-assignment/data-binding-assignment/data-binding-assignment';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, CustomersList, Calculations, About, 
     NavBar, LiveCounter, LightSwitch, EventBinding, UserProfile,
     StructuralDirectives, AttributeDirectives, BuiltInPipes,
-    DirectivesAssignment],
+    DirectivesAssignment, DataBindingAssignment],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

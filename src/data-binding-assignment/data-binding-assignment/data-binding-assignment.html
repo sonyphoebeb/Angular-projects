@@ -1,0 +1,24 @@
+<div class="container">
+
+    <!-- Interpolation -->
+    <h2>{{ appTitle }}</h2>
+
+    <!-- Property Binding -->
+    <img [src]="imageUrl" alt="Angular Logo" width="150" />
+    <button [disabled]="isButtonDisabled" (click)="toggleButton()">
+        Toggle Disable
+    </button>
+
+    <!-- Event Binding -->
+    <div>
+        <button (click)="incrementCounter()">Increment Counter</button>
+        <p>Counter: {{ counter }}</p>
+    </div>
+
+    <!-- Two-way Binding -->
+    <div>
+        <input [(ngModel)]="userInput" placeholder="Type something..." />
+        <p>You typed: {{ userInput }}</p>
+    </div>
+
+</div>

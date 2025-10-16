@@ -1,0 +1,38 @@
+.container {
+    border: 2px solid #007ACC;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: #007ACC;
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007ACC;
+    color: white;
+    font-weight: bold;
+}
+
+button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+input {
+    padding: 8px;
+    width: 80%;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
