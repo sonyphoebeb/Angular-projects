@@ -1,0 +1,82 @@
+<h2>Angular Built-in Pipes Assignment</h2>
+
+<table>
+    <tr>
+        <th>Pipe Name</th>
+        <th>Example</th>
+        <th>Output</th>
+        <th>Data Type</th>
+    </tr>
+
+    <!-- DatePipe -->
+    <tr>
+        <td>DatePipe</td>
+        <td>{{ currentDate }}</td>
+        <td>{{ currentDate | date:'fullDate' }}</td>
+        <td class="date-type">📅 Date</td>
+    </tr>
+
+    <!-- UpperCasePipe -->
+    <tr>
+        <td>UpperCasePipe</td>
+        <td>{{ userName }}</td>
+        <td>{{ userName | uppercase }}</td>
+        <td class="string-type">📝 String</td>
+    </tr>
+
+    <!-- LowerCasePipe -->
+    <tr>
+        <td>LowerCasePipe</td>
+        <td>{{ userName }}</td>
+        <td>{{ userName | lowercase }}</td>
+        <td class="string-type">📝 String</td>
+    </tr>
+
+    <!-- TitleCasePipe -->
+    <tr>
+        <td>TitleCasePipe</td>
+        <td>{{ userName }}</td>
+        <td>{{ userName | titlecase }}</td>
+        <td class="string-type">📝 String</td>
+    </tr>
+
+    <!-- CurrencyPipe -->
+    <tr>
+        <td>CurrencyPipe</td>
+        <td>{{ amount }}</td>
+        <td>{{ amount | currency:'INR':'symbol':'1.2-2' }}</td>
+        <td class="number-type">🔢 Number</td>
+    </tr>
+
+    <!-- DecimalPipe -->
+    <tr>
+        <td>DecimalPipe</td>
+        <td>{{ amount }}</td>
+        <td>{{ amount | number:'1.0-3' }}</td>
+        <td class="number-type">🔢 Number</td>
+    </tr>
+
+    <!-- PercentPipe -->
+    <tr>
+        <td>PercentPipe</td>
+        <td>0.25</td>
+        <td>{{ 0.25 | percent:'1.0-0' }}</td>
+        <td class="number-type">🔢 Number</td>
+    </tr>
+
+    <!-- JsonPipe -->
+    <tr>
+        <td>JsonPipe</td>
+        <td>{{ user }}</td>
+        <td>{{ user | json }}</td>
+        <td class="object-type">🗂️ Object</td>
+    </tr>
+
+    <!-- SlicePipe -->
+    <tr>
+        <td>SlicePipe</td>
+        <td>{{ movies }}</td>
+        <td>{{ movies | slice:1:3 }}</td>
+        <td class="array-type">📚 Array</td>
+    </tr>
+</table>

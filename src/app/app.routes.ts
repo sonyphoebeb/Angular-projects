@@ -10,6 +10,7 @@ import { AttributeDirectives } from '../attribute-directives/attribute-directive
 import { BuiltInPipes } from '../built-in-pipes/built-in-pipes';
 import { DirectivesAssignment } from '../directives-assignment/directives-assignment';
 import { DataBindingAssignment } from '../data-binding-assignment/data-binding-assignment/data-binding-assignment';
+import { PipesAssignment } from '../pipes-assignment/pipes-assignment';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'calculator', pathMatch: 'full' },
@@ -27,5 +28,6 @@ export const routes: Routes = [
     { path: 'attribute-directives', component: AttributeDirectives},
     { path: 'built-in-pipes', component: BuiltInPipes}, 
     { path: 'directives-assignment', component: DirectivesAssignment},
-    { path: 'data-binding-assignment', component: DataBindingAssignment}
+    { path: 'data-binding-assignment', component: DataBindingAssignment},
+    { path: 'pipes-assignment', component: PipesAssignment}
 ];

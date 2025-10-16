@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 export class DataBindingAssignment {
 
   // Interpolation
-  appTitle: string = 'Angular Data Binding Demo';
+  appTitle: string = 'Angular Data Binding Assignment';
 
   // Property Binding
   imageUrl: string = 'https://angular.io/assets/images/logos/angular/angular.png';
