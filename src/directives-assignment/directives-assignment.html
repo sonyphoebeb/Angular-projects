@@ -1,1 +1,61 @@
-<p>directives-assignment works!</p>
+<div class="container mt-4">
+  <div class="card shadow p-4">
+    <h3 class="text-success mb-3">
+      <i class="bi bi-layers-half"></i> 🌟 Angular Directives
+    </h3>
+
+    <!-- *ngIf Directive -->
+    <h5 class="text-primary mt-3">*ngIf Directive</h5>
+    <button class="btn btn-sm btn-outline-primary mb-2" (click)="toggleUser()">
+      Toggle User Display
+    </button>
+    <p *ngIf="showUser">👋 Welcome, {{ username }}!</p>
+    <p *ngIf="!showUser">❌ User is hidden</p>
+
+    <hr />
+
+    <!-- *ngFor Directive -->
+    <h5 class="text-primary mt-3">*ngFor Directive</h5>
+    <ul class="list-group">
+      <li *ngFor="let tech of technologies; let i = index" class="list-group-item">
+        {{ tech }}
+      </li>
+    </ul>
+
+    <hr />
+
+    <!-- ngSwitch Directive -->
+    <h5 class="text-primary mt-3">ngSwitch Directive</h5>
+    <select class="form-select w-50" [(ngModel)]="selectedColor">
+      <option *ngFor="let color of colors" [value]="color">{{ color }}</option>
+    </select>
+
+    <div [ngSwitch]="selectedColor" class="mt-2">
+      <p *ngSwitchCase="'Red'" class="text-danger">You chose RED ❤️</p>
+      <p *ngSwitchCase="'Green'" class="text-success">You chose GREEN 💚</p>
+      <p *ngSwitchCase="'Blue'" class="text-primary">You chose BLUE 💙</p>
+      <p *ngSwitchDefault class="text-muted">Please select a color 🎨</p>
+    </div>
+
+    <hr />
+
+    <!-- [ngClass] and [ngStyle] Directives -->
+    <h5 class="text-primary mt-3">[ngClass] and [ngStyle]</h5>
+    <p [ngClass]="{
+        'text-danger': status === 'error',
+        'text-success': status === 'success'
+      }" [ngStyle]="{
+        'font-weight': 'bold',
+        'font-size.px': 18
+      }">
+      Current Status: {{ status }}
+    </p>
+
+    <button class="btn btn-outline-success btn-sm me-2" (click)="status = 'success'">
+      Success
+    </button>
+    <button class="btn btn-outline-danger btn-sm" (click)="status = 'error'">
+      Error
+    </button>
+  </div>
+</div>

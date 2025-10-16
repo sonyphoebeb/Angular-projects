@@ -8,6 +8,7 @@ import { UserProfile } from '../user-profile/user-profile';
 import { StructuralDirectives } from '../structural-directives/structural-directives';
 import { AttributeDirectives } from '../attribute-directives/attribute-directives';
 import { BuiltInPipes } from '../built-in-pipes/built-in-pipes';
+import { DirectivesAssignment } from '../directives-assignment/directives-assignment';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'calculator', pathMatch: 'full' },
@@ -23,5 +24,6 @@ export const routes: Routes = [
     { path: 'user-profile', component: UserProfile},    
     { path: 'structural-directives', component: StructuralDirectives},
     { path: 'attribute-directives', component: AttributeDirectives},
-    { path: 'built-in-pipes', component: BuiltInPipes}
+    { path: 'built-in-pipes', component: BuiltInPipes}, 
+    { path: 'directives-assignment', component: DirectivesAssignment}
 ];
