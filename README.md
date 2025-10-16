@@ -907,6 +907,115 @@ Dynamically applies inline styles to elements.
 
 
 
+<br>
 
+# 🗓️ Date: 15-Oct-2025 - 🧩 Angular Built-in Pipes Practice
+
+<h2> 🔹 Overview </h2>
+
+This module demonstrates the use of Built-in Pipes in Angular.
+
+Pipes are used to transform data directly in the template without changing the component’s logic.
+
+<h2>🔹 Covered Pipes </h2>
+
+<table border="1" cellspacing="0" cellpadding="6">
+  <tr>
+    <th>Pipe</th>
+    <th>Description</th>
+    <th>Example Usage</th>
+  </tr>
+  <tr>
+    <td>uppercase</td>
+    <td>Converts text to uppercase</td>
+    <td>{{ name | uppercase }}</td>
+  </tr>
+  <tr>
+    <td>lowercase</td>
+    <td>Converts text to lowercase</td>
+    <td>{{ name | lowercase }}</td>
+  </tr>
+  <tr>
+    <td>titlecase</td>
+    <td>Converts the first letter of each word to uppercase</td>
+    <td>{{ name | titlecase }}</td>
+  </tr>
+  <tr>
+    <td>date</td>
+    <td>Formats date values</td>
+    <td>{{ today | date:'fullDate' }}</td>
+  </tr>
+  <tr>
+    <td>currency</td>
+    <td>Formats a number as a currency</td>
+    <td>{{ price | currency:'INR' }}</td>
+  </tr>
+  <tr>
+    <td>number</td>
+    <td>Formats a number according to digit info</td>
+    <td>{{ value | number:'1.2-2' }}</td>
+  </tr>
+  <tr>
+    <td>percent</td>
+    <td>Converts a number to a percentage</td>
+    <td>{{ score | percent }}</td>
+  </tr>
+  <tr>
+    <td>slice</td>
+    <td>Returns a section of an array</td>
+    <td>{{ items | slice:1:3 }}</td>
+  </tr>
+  <tr>
+    <td>json</td>
+    <td>Converts object into a JSON string</td>
+    <td>{{ user | json }}</td>
+  </tr>
+</table>
+
+<h2> 🧠 Concept Summary </h2> 
+
+* Pipes are declared using the | (pipe) symbol in Angular templates.
+
+* They help in transforming data formats dynamically without altering the actual data in the component.
+
+<h2> 🧩 Example Output </h2> 
+
+The demo displays:
+
+    1. User name in various formats (uppercase, lowercase, titlecase).
+
+    2. Current date in different formats.
+
+    3. Prices and numbers formatted as currency and percentages.
+
+    4. JSON representation of an object.
+
+    5. Partial list of items using slice.
+
+<h2> 📁 Folder Structure </h2> 
+
+src/
+
+ └── app/
+ 
+      └── pipes-demo/
+      
+          ├── pipes-demo.component.ts
+          
+          ├── pipes-demo.component.html
+          
+          ├── pipes-demo.component.css
+
+<h3> 🎨 Styling </h3> 
+
+The component is styled with a simple and elegant CSS layout for better readability and presentation.
+
+<h2> 🧾 Summary </h2>
+
+✅ Practiced: Built-in Pipes
+
+✅ Concepts: Data Transformation in Templates
+
+✅ Tools Used: Angular CLI, TypeScript, HTML, CSS
 
 
