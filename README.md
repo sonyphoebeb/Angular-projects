@@ -1102,7 +1102,7 @@ angular-assignments/
 │
 └── README.md
 
-🎯 Key Learning Outcomes
+<h2> 🎯 Key Learning Outcomes </h2> 
 
 Understanding and implementing Angular directives.
 
