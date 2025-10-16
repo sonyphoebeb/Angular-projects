@@ -1020,17 +1020,17 @@ The component is styled with a simple and elegant CSS layout for better readabil
 
 
 
+<br>
 
-
-
-Angular Assignments
+# 🗓️ Date: 16-Oct-2025 - Angular Assignments
 
 This repository contains Angular practice assignments demonstrating key concepts like directives, data binding, and built-in pipes.
 
-📝 Assignments Overview
-Assignment 1: Directives Demo
+<h2> 📝 Assignments Overview </h2>
 
-Objective: Create a component that demonstrates all Angular structural and attribute directives.
+<h3> Assignment 1: Directives Demo </h3>
+
+* Objective: Create a component that demonstrates all Angular structural and attribute directives.
 
 Features Implemented:
 
