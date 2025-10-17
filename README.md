@@ -1028,65 +1028,65 @@ This repository contains Angular practice assignments demonstrating key concepts
 
 <h2> 📝 Assignments Overview </h2>
 
-<h3> Assignment 1: Directives Demo </h3>
+<h3> Assignment 1: Directives </h3>
 
 * Objective: Create a component that demonstrates all Angular structural and attribute directives.
 
-Features Implemented:
+* Features Implemented:
 
-*ngIf → Conditional rendering
+      * ngIf → Conditional rendering
 
-*ngFor → Looping through arrays
+      * ngFor → Looping through arrays
 
-*ngSwitch → Conditional switching
+      * ngSwitch → Conditional switching
 
-[ngClass] → Dynamic class binding
+      * [ngClass] → Dynamic class binding
 
-[ngStyle] → Dynamic inline styles
+      * [ngStyle] → Dynamic inline styles
 
-Assignment 2: Data Binding
+<h3>  Assignment 2: Data Binding </h3>
 
-Objective: Demonstrate data binding techniques in Angular with a proper model execution.
+* Objective: Demonstrate data binding techniques in Angular with a proper model execution.
 
-Features Implemented:
+* Features Implemented:
 
-Interpolation → Displaying component data in templates
+      Interpolation → Displaying component data in templates
 
-Property Binding → Binding HTML element properties
+      Property Binding → Binding HTML element properties
+  
+      Event Binding → Handling user events
 
-Event Binding → Handling user events
+      Two-way Binding → Synchronizing input fields with component data using [(ngModel)]
 
-Two-way Binding → Synchronizing input fields with component data using [(ngModel)]
+<h3> Assignment 3: Built-in Pipes </h3> 
 
-Assignment 3: Built-in Pipes Demo
+* Objective: Create a component to demonstrate all Angular built-in pipes using different data types.
 
-Objective: Create a component to demonstrate all Angular built-in pipes using different data types.
+* Features Implemented:
 
-Features Implemented:
+      DatePipe → Format dates
 
-DatePipe → Format dates
+      UpperCasePipe / LowerCasePipe / TitleCasePipe → String formatting
 
-UpperCasePipe / LowerCasePipe / TitleCasePipe → String formatting
+      CurrencyPipe / DecimalPipe / PercentPipe → Number formatting
 
-CurrencyPipe / DecimalPipe / PercentPipe → Number formatting
+      JsonPipe → Display objects as JSON
 
-JsonPipe → Display objects as JSON
+      SlicePipe → Array slicing
 
-SlicePipe → Array slicing
+* UI Features:
 
-UI Features:
+      Table format with example, output, and data type columns
 
-Table format with example, output, and data type columns
+      Color-coded data type labels with icons for better visualization
 
-Color-coded data type labels with icons for better visualization
+<h3> 🔗 Technologies Used </h3> 
 
-🔗 Technologies Used
+* Angular
 
-Angular 15+
+* HTML & CSS
 
-HTML5 & CSS3
-
-TypeScript
+* TypeScript
 
 📂 Folder Structure (Sample)
 angular-assignments/
