@@ -1221,30 +1221,55 @@ Built-in:  date, uppercase, lowercase, titlecase, currency, percent, json, slice
 
 These are methods Angular calls during a component’s life.
 
-Hook	When It Runs
-ngOnInit()	After component initialization
-ngOnChanges()	When input data changes
-ngDoCheck()	Custom change detection
-ngAfterViewInit()	After view is initialized
-ngOnDestroy()	Before component is destroyed
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Hook</th>
+      <th>When It Runs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ngOnInit()</td>
+      <td>After component initialization</td>
+    </tr>
+    <tr>
+      <td>ngOnChanges()</td>
+      <td>When input data changes</td>
+    </tr>
+    <tr>
+      <td>ngDoCheck()</td>
+      <td>Custom change detection</td>
+    </tr>
+    <tr>
+      <td>ngAfterViewInit()</td>
+      <td>After view is initialized</td>
+    </tr>
+    <tr>
+      <td>ngOnDestroy()</td>
+      <td>Before component is destroyed</td>
+    </tr>
+  </tbody>
+</table>
+
 
 <h2> 🧩 6️⃣ Services & Dependency Injection </h2> 
 
-Used for logic sharing (like APIs, data, state).
+Used for <b>logic sharing</b> (like APIs, data, state).
 Services are injected into components via constructor injection.
 
 Example:
 
-@Injectable({ providedIn: 'root' })
-export class UserService {
-  getUser() {
+    @Injectable({ providedIn: 'root' })
+    export class UserService {
+     getUser() {
     return { name: 'Sony', role: 'Student' };
-  }
-}
-
-export class ProfileComponent {
-  constructor(private userService: UserService) {}
-}
+     }
+    }
+ 
+    export class ProfileComponent {
+    constructor(private userService: UserService) {}
+    }
 
 <h2> 🌐 7️⃣ Routing </h2> 
 
@@ -1252,11 +1277,10 @@ Handles page navigation inside SPA (Single Page App).
 
 Example:
 
-const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent }
-];
-
+    const routes: Routes = [
+    { path: 'home', component: HomeComponent },
+    { path: 'about', component: AboutComponent }
+    ];
 
 Then add <router-outlet></router-outlet> in app.component.html.
 
