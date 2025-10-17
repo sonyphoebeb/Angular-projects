@@ -1133,38 +1133,41 @@ Structuring components with proper separation of logic and UI.
 <h2> 🧩 1️⃣ Components </h2> 
 
 <b>Definition:</b> The basic building blocks of Angular applications.
+
 Each component controls a part of the UI.
 
 Example:
 
-@Component({
-  selector: 'app-hello',
-  template: `<h2>Hello {{name}}!</h2>`
-})
-export class HelloComponent {
-  name = 'Sony';
-}
-
+    @Component({
+    selector: 'app-hello',
+    template: `<h2>Hello {{name}}!</h2>`
+    })
+    export class HelloComponent {
+     name = 'Sony';
+    }
 
 🟢 Declared in a module (usually AppModule).
+
 🟢 Connected using selector <app-hello></app-hello>.
 
 <h2> ⚙️ 2️⃣ Directives </h2> 
 
-Purpose: Add behavior or modify elements in the DOM.
+<b>Purpose:</b> Add behavior or modify elements in the DOM.
 
-Structural Directives: change DOM structure
-→ *ngIf, *ngFor, *ngSwitchCase
+* Structural Directives: change DOM structure
+  
+      → *ngIf, *ngFor, *ngSwitchCase
 
-Attribute Directives: change element behavior or style
-→ [ngStyle], [ngClass], custom directives
+* Attribute Directives: change element behavior or style
+  
+      → [ngStyle], [ngClass], custom directives
 
 Example:
 
-<p *ngIf="isLoggedIn">Welcome back!</p>
-<ul>
-  <li *ngFor="let item of items">{{ item }}</li>
-</ul>
+    <p *ngIf="isLoggedIn">Welcome back!</p>
+    <ul>
+    <li *ngFor="let item of items">{{ item }}</li>
+    </ul>
 
 <h2> 🔗 3️⃣ Data Binding </h2> 
 
