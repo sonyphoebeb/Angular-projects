@@ -1156,11 +1156,11 @@ Example:
 
 * Structural Directives: change DOM structure
   
-      → *ngIf, *ngFor, *ngSwitchCase
+  *ngIf, *ngFor, *ngSwitchCase
 
 * Attribute Directives: change element behavior or style
   
-      → [ngStyle], [ngClass], custom directives
+  [ngStyle], [ngClass], custom directives
 
 Example:
 
@@ -1173,11 +1173,38 @@ Example:
 
 Connects your TypeScript logic and HTML template.
 
-Type	Example	Description
-Interpolation	{{ name }}	Display data
-Property Binding	[disabled]="isDisabled"	Bind HTML properties
-Event Binding	(click)="onClick()"	Handle events
-Two-way Binding	[(ngModel)]="userName"	Sync input and model
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Example</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Interpolation</td>
+      <td>{{'{{ name }}'}}</td>
+      <td>Display data</td>
+    </tr>
+    <tr>
+      <td>Property Binding</td>
+      <td>[disabled]="isDisabled"</td>
+      <td>Bind HTML properties</td>
+    </tr>
+    <tr>
+      <td>Event Binding</td>
+      <td>(click)="onClick()"</td>
+      <td>Handle events</td>
+    </tr>
+    <tr>
+      <td>Two-way Binding</td>
+      <td>[(ngModel)]="userName"</td>
+      <td>Sync input and model</td>
+    </tr>
+  </tbody>
+</table>
+
 
 <h2> 💬 4️⃣ Pipes </h2>
 
