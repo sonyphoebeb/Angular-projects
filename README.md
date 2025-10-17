@@ -1034,15 +1034,15 @@ This repository contains Angular practice assignments demonstrating key concepts
 
 * Features Implemented:
 
-      * ngIf → Conditional rendering
+      ngIf → Conditional rendering
 
-      * ngFor → Looping through arrays
+      ngFor → Looping through arrays
 
-      * ngSwitch → Conditional switching
+      ngSwitch → Conditional switching
 
-      * [ngClass] → Dynamic class binding
+      [ngClass] → Dynamic class binding
 
-      * [ngStyle] → Dynamic inline styles
+      [ngStyle] → Dynamic inline styles
 
 <h3>  Assignment 2: Data Binding </h3>
 
@@ -1088,18 +1088,30 @@ This repository contains Angular practice assignments demonstrating key concepts
 
 * TypeScript
 
-📂 Folder Structure (Sample)
+<h3> 📂 Folder Structure (Sample) </h3> 
+
 angular-assignments/
+
 │
+
 ├── assignment1-directives/
+
 │   └── directives-demo.component.ts/html/css
+
 │
+
 ├── assignment2-databinding/
+
 │   └── data-binding.component.ts/html/css
+
 │
+
 ├── assignment3-pipes/
+
 │   └── pipes-assignment.component.ts/html/css
+
 │
+
 └── README.md
 
 <h2> 🎯 Key Learning Outcomes </h2> 
