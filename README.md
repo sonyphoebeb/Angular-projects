@@ -1149,6 +1149,7 @@ Example:
 🟢 Declared in a module (usually AppModule).
 
 🟢 Connected using selector <app-hello></app-hello>.
+
 <br>
 <h2> ⚙️ 2️⃣ Directives </h2> 
 
@@ -1215,6 +1216,7 @@ Example:
     <p>{{ name | uppercase }}</p>
 
 Built-in:  date, uppercase, lowercase, titlecase, currency, percent, json, slice.
+
 <br>
 <h2> 🧠 5️⃣ Lifecycle Hooks </h2> 
 
