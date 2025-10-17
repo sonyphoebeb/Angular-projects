@@ -1149,7 +1149,7 @@ Example:
 🟢 Declared in a module (usually AppModule).
 
 🟢 Connected using selector <app-hello></app-hello>.
-
+<br>
 <h2> ⚙️ 2️⃣ Directives </h2> 
 
 <b>Purpose:</b> Add behavior or modify elements in the DOM.
@@ -1168,7 +1168,7 @@ Example:
     <ul>
     <li *ngFor="let item of items">{{ item }}</li>
     </ul>
-
+<br>
 <h2> 🔗 3️⃣ Data Binding </h2> 
 
 Connects your TypeScript logic and HTML template.
@@ -1204,8 +1204,7 @@ Connects your TypeScript logic and HTML template.
     </tr>
   </tbody>
 </table>
-
-
+<br>
 <h2> 💬 4️⃣ Pipes </h2>
 
 Transform data in templates.
@@ -1216,7 +1215,7 @@ Example:
     <p>{{ name | uppercase }}</p>
 
 Built-in:  date, uppercase, lowercase, titlecase, currency, percent, json, slice.
-
+<br>
 <h2> 🧠 5️⃣ Lifecycle Hooks </h2> 
 
 These are methods Angular calls during a component’s life.
@@ -1251,8 +1250,7 @@ These are methods Angular calls during a component’s life.
     </tr>
   </tbody>
 </table>
-
-
+<br>
 <h2> 🧩 6️⃣ Services & Dependency Injection </h2> 
 
 Used for <b>logic sharing</b> (like APIs, data, state).
