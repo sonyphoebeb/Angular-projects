@@ -1128,11 +1128,11 @@ Structuring components with proper separation of logic and UI.
 
 <br>
 
-# 🗓️ Date: 16-Oct-2025 - Angular core topics revise
+# 🗓️ Date: 17-Oct-2025 - Angular core topics revise
 
 <h2> 🧩 1️⃣ Components </h2> 
 
-Definition: The basic building blocks of Angular applications.
+<b>Definition:</b> The basic building blocks of Angular applications.
 Each component controls a part of the UI.
 
 Example:
