@@ -1270,7 +1270,7 @@ Example:
     export class ProfileComponent {
     constructor(private userService: UserService) {}
     }
-
+<br>
 <h2> 🌐 7️⃣ Routing </h2> 
 
 Handles page navigation inside SPA (Single Page App).
