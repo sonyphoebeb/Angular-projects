@@ -1212,11 +1212,10 @@ Transform data in templates.
 
 Example:
 
-<p>{{ today | date:'fullDate' }}</p>
-<p>{{ name | uppercase }}</p>
+    <p>{{ today | date:'fullDate' }}</p>
+    <p>{{ name | uppercase }}</p>
 
-
-Built-in: date, uppercase, lowercase, titlecase, currency, percent, json, slice.
+Built-in:  date, uppercase, lowercase, titlecase, currency, percent, json, slice.
 
 <h2> 🧠 5️⃣ Lifecycle Hooks </h2> 
 
