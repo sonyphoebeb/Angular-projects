@@ -1130,3 +1130,117 @@ Structuring components with proper separation of logic and UI.
 
 # 🗓️ Date: 16-Oct-2025 - Angular core topics revise
 
+🧩 1️⃣ Components
+
+Definition: The basic building blocks of Angular applications.
+Each component controls a part of the UI.
+
+Example:
+
+@Component({
+  selector: 'app-hello',
+  template: `<h2>Hello {{name}}!</h2>`
+})
+export class HelloComponent {
+  name = 'Sony';
+}
+
+
+🟢 Declared in a module (usually AppModule).
+🟢 Connected using selector <app-hello></app-hello>.
+
+⚙️ 2️⃣ Directives
+
+Purpose: Add behavior or modify elements in the DOM.
+
+Structural Directives: change DOM structure
+→ *ngIf, *ngFor, *ngSwitchCase
+
+Attribute Directives: change element behavior or style
+→ [ngStyle], [ngClass], custom directives
+
+Example:
+
+<p *ngIf="isLoggedIn">Welcome back!</p>
+<ul>
+  <li *ngFor="let item of items">{{ item }}</li>
+</ul>
+
+🔗 3️⃣ Data Binding
+
+Connects your TypeScript logic and HTML template.
+
+Type	Example	Description
+Interpolation	{{ name }}	Display data
+Property Binding	[disabled]="isDisabled"	Bind HTML properties
+Event Binding	(click)="onClick()"	Handle events
+Two-way Binding	[(ngModel)]="userName"	Sync input and model
+💬 4️⃣ Pipes
+
+Transform data in templates.
+
+Example:
+
+<p>{{ today | date:'fullDate' }}</p>
+<p>{{ name | uppercase }}</p>
+
+
+Built-in: date, uppercase, lowercase, titlecase, currency, percent, json, slice.
+
+🧠 5️⃣ Lifecycle Hooks
+
+These are methods Angular calls during a component’s life.
+
+Hook	When It Runs
+ngOnInit()	After component initialization
+ngOnChanges()	When input data changes
+ngDoCheck()	Custom change detection
+ngAfterViewInit()	After view is initialized
+ngOnDestroy()	Before component is destroyed
+🧩 6️⃣ Services & Dependency Injection
+
+Used for logic sharing (like APIs, data, state).
+Services are injected into components via constructor injection.
+
+Example:
+
+@Injectable({ providedIn: 'root' })
+export class UserService {
+  getUser() {
+    return { name: 'Sony', role: 'Student' };
+  }
+}
+
+export class ProfileComponent {
+  constructor(private userService: UserService) {}
+}
+
+🌐 7️⃣ Routing
+
+Handles page navigation inside SPA (Single Page App).
+
+Example:
+
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent }
+];
+
+
+Then add <router-outlet></router-outlet> in app.component.html.
+
+🧾 8️⃣ Forms
+
+Two types:
+
+Template-driven (simple)
+
+Reactive forms (powerful, structured)
+
+Template Example:
+
+<form #userForm="ngForm">
+  <input name="userName" ngModel>
+  <button>Submit</button>
+</form>
+
