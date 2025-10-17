@@ -1124,3 +1124,9 @@ Using built-in pipes effectively for data transformation.
 
 Structuring components with proper separation of logic and UI.
 
+
+
+<br>
+
+# 🗓️ Date: 16-Oct-2025 - Angular core topics revise
+
