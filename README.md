@@ -1130,7 +1130,7 @@ Structuring components with proper separation of logic and UI.
 
 # 🗓️ Date: 16-Oct-2025 - Angular core topics revise
 
-🧩 1️⃣ Components
+<h2> 🧩 1️⃣ Components </h2> 
 
 Definition: The basic building blocks of Angular applications.
 Each component controls a part of the UI.
@@ -1149,7 +1149,7 @@ export class HelloComponent {
 🟢 Declared in a module (usually AppModule).
 🟢 Connected using selector <app-hello></app-hello>.
 
-⚙️ 2️⃣ Directives
+<h2> ⚙️ 2️⃣ Directives </h2> 
 
 Purpose: Add behavior or modify elements in the DOM.
 
@@ -1166,7 +1166,7 @@ Example:
   <li *ngFor="let item of items">{{ item }}</li>
 </ul>
 
-🔗 3️⃣ Data Binding
+<h2> 🔗 3️⃣ Data Binding </h2> 
 
 Connects your TypeScript logic and HTML template.
 
@@ -1175,7 +1175,8 @@ Interpolation	{{ name }}	Display data
 Property Binding	[disabled]="isDisabled"	Bind HTML properties
 Event Binding	(click)="onClick()"	Handle events
 Two-way Binding	[(ngModel)]="userName"	Sync input and model
-💬 4️⃣ Pipes
+
+<h2> 💬 4️⃣ Pipes </h2>
 
 Transform data in templates.
 
@@ -1187,7 +1188,7 @@ Example:
 
 Built-in: date, uppercase, lowercase, titlecase, currency, percent, json, slice.
 
-🧠 5️⃣ Lifecycle Hooks
+<h2> 🧠 5️⃣ Lifecycle Hooks </h2> 
 
 These are methods Angular calls during a component’s life.
 
@@ -1197,7 +1198,8 @@ ngOnChanges()	When input data changes
 ngDoCheck()	Custom change detection
 ngAfterViewInit()	After view is initialized
 ngOnDestroy()	Before component is destroyed
-🧩 6️⃣ Services & Dependency Injection
+
+<h2> 🧩 6️⃣ Services & Dependency Injection </h2> 
 
 Used for logic sharing (like APIs, data, state).
 Services are injected into components via constructor injection.
@@ -1215,7 +1217,7 @@ export class ProfileComponent {
   constructor(private userService: UserService) {}
 }
 
-🌐 7️⃣ Routing
+<h2> 🌐 7️⃣ Routing </h2> 
 
 Handles page navigation inside SPA (Single Page App).
 
@@ -1229,18 +1231,4 @@ const routes: Routes = [
 
 Then add <router-outlet></router-outlet> in app.component.html.
 
-🧾 8️⃣ Forms
-
-Two types:
-
-Template-driven (simple)
-
-Reactive forms (powerful, structured)
-
-Template Example:
-
-<form #userForm="ngForm">
-  <input name="userName" ngModel>
-  <button>Submit</button>
-</form>
 
