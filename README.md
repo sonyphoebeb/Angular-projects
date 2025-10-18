@@ -1288,10 +1288,12 @@ Then add <router-outlet></router-outlet> in app.component.html.
 
 <br>
 
-# 🗓️ Date: 18-Oct-2025 - 📘 Angular – Phase 4: Reactive Forms & Advanced Routing
+# 🗓️ Date: 18-Oct-2025 - Saturday
+# 📘 Angular – Phase 4: Reactive Forms & Advanced Routing
 
 This phase covers Reactive Forms, Router Basics, Route Guards, and Lazy Loading in Angular. These topics form the foundation for building large-scale, modular, and secure Angular applications.
 
+<br>
 <h2> 🧩 1️⃣ Reactive Forms </h2> 
 
 Reactive forms provide a model-driven approach to handling form inputs in Angular.
@@ -1349,6 +1351,7 @@ html
     <button [disabled]="userForm.invalid">Submit</button>
     </form>
 
+<br>
 <h2> 🚦 2️⃣ Router Basics </h2> 
 
 Routing allows navigation between different views or pages in a single-page Angular application.
@@ -1381,6 +1384,7 @@ html
     <a [routerLink]="['/user', userId]">User Details</a>
     <router-outlet></router-outlet>
 
+<br>
 <h2> 🛡️ 3️⃣ Route Guards </h2> 
 
 Guards are used to control access to certain routes based on conditions like authentication or unsaved changes.
@@ -1425,6 +1429,7 @@ Guards are used to control access to certain routes based on conditions like aut
      }
     }
 
+<br>
 <h2> ⚡ 4️⃣ Lazy Loading </h2> 
 
 Lazy loading improves performance by loading modules only when needed instead of at app startup.
@@ -1443,6 +1448,7 @@ app-routing.module.ts
 
 ✅ This ensures that the AdminModule is loaded only when the user navigates to /admin.
 
+<br>
 <h2> 🎯 Learning Outcomes </h2> 
 
 * Understand and implement Reactive Forms using FormControl, FormGroup, and validators.
