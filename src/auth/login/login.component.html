@@ -1,0 +1,78 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <h2>Welcome Back</h2>
+      <p>Please sign in to your account</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      
+      <!-- Username Field -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input 
+          type="text" 
+          id="username" 
+          formControlName="username" 
+          placeholder="Enter your username"
+          [class.error]="isFieldInvalid('username')"
+          [disabled]="isLoading"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('username')">
+          {{ getFieldError('username') }}
+        </div>
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          formControlName="password" 
+          placeholder="Enter your password"
+          [class.error]="isFieldInvalid('password')"
+          [disabled]="isLoading"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('password')">
+          {{ getFieldError('password') }}
+        </div>
+      </div>
+
+      <!-- Login Error Message -->
+      <div class="error-message login-error" *ngIf="loginError">
+        {{ loginError }}
+      </div>
+
+      <!-- Submit Button -->
+      <button 
+        type="submit" 
+        class="login-btn"
+        [disabled]="loginForm.invalid || isLoading"
+      >
+        <span *ngIf="!isLoading">Sign In</span>
+        <span *ngIf="isLoading" class="loading-spinner">
+          <span class="spinner"></span>
+          Signing In...
+        </span>
+      </button>
+
+      <!-- Demo Credentials Button -->
+      <button 
+        type="button" 
+        class="demo-btn"
+        (click)="fillDemoCredentials()"
+        [disabled]="isLoading"
+      >
+        Fill Demo Credentials
+      </button>
+    </form>
+
+    <!-- Demo Credentials Info -->
+    <div class="demo-info">
+      <h4>Demo Credentials:</h4>
+      <p><strong>Username:</strong> sonymedsquire</p>
+      <p><strong>Password:</strong> Welcome@3164</p>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LogoutButtonComponent } from '../../shared/logout-button/logout-button.component';
 
 @Component({
   selector: 'app-live-counter',
-  imports: [],
+  imports: [CommonModule, LogoutButtonComponent],
   templateUrl: './live-counter.html',
   styleUrl: './live-counter.css'
 })

@@ -8,14 +8,20 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.hiring-form-container h2 {
-  color: #2c3e50;
-  text-align: center;
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #3498db;
+}
+
+.form-header h2 {
+  color: #2c3e50;
+  margin: 0;
   font-size: 2rem;
   font-weight: 600;
-  border-bottom: 3px solid #3498db;
-  padding-bottom: 1rem;
 }
 
 .hiring-form {

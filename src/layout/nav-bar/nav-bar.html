@@ -1,19 +1,17 @@
 <nav>
-    <ul>
-        <li><a routerLink="/calculator" routerLinkActive="active">Calculator</a></li>
-        <!--<li><a routerLink="/users/home" routerLinkActive="active">Home</a></li>
-        <li><a routerLink="/users/about" routerLinkActive="active">About</a></li>
-        <li><a routerLink="/lifecycle-hooks" routerLinkActive="active">Lifecycle Hooks</a></li>
-        <li><a routerLink="/live-counter" routerLinkActive="active">Live Counter</a></li>
-        <li><a routerLink="/light-switch" routerLinkActive="active">Light Switch</a></li>       
-        <li><a routerLink="/event-binding" routerLinkActive="active">Event Binding</a></li>      
-        <li><a routerLink="/user-profile" routerLinkActive="active">User Profile</a></li>       
-        <li><a routerLink="/structural-directives" routerLinkActive="active">Structural Directives</a></li>
-        <li><a routerLink="/attribute-directives" routerLinkActive="active">Attribute Directives</a></li>-->
-        <li><a routerLink="/built-in-pipes" routerLinkActive="active">Built-In Pipes</a></li>
-        <li><a routerLink="/directives-assignment" routerLinkActive="active">Directives Assignment</a></li>        
-        <li><a routerLink="/data-binding-assignment" routerLinkActive="active">Data Binding Assignment</a></li>       
-        <li><a routerLink="/pipes-assignment" routerLinkActive="active">Pipes Assignment</a></li>   
-        <li><a routerLink="/reactive-form" routerLinkActive="active">Hiring Form Page</a></li>
-    </ul>
+    <div class="nav-content">
+        <ul>
+            <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+            <li><a routerLink="/calculator" routerLinkActive="active">Calculator</a></li>
+            <li><a routerLink="/user-profile" routerLinkActive="active">User Profile</a></li>
+            <li><a routerLink="/built-in-pipes" routerLinkActive="active">Built-In Pipes</a></li>
+            <li><a routerLink="/directives-assignment" routerLinkActive="active">Directives Assignment</a></li>        
+            <li><a routerLink="/data-binding-assignment" routerLinkActive="active">Data Binding Assignment</a></li>       
+            <li><a routerLink="/pipes-assignment" routerLinkActive="active">Pipes Assignment</a></li>   
+            <li><a routerLink="/reactive-form" routerLinkActive="active">Hiring Form</a></li>
+        </ul>
+        <div class="nav-actions">
+            <app-logout-button buttonClass="logout-btn small"></app-logout-button>
+        </div>
+    </div>
 </nav>

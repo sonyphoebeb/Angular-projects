@@ -1,20 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CanComponentDeactivate } from '../../guards/can-deactivate.guard';
+import { LogoutButtonComponent } from '../../shared/logout-button/logout-button.component';
 
 @Component({
   selector: 'app-hiring-form-page',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, LogoutButtonComponent],
   templateUrl: './hiring-form-page.html',
   styleUrl: './hiring-form-page.css'
 })
-export class HiringFormPage implements OnInit {
+export class HiringFormPage implements OnInit, CanComponentDeactivate {
   hiringForm!: FormGroup;
+  hasUnsavedChanges: boolean = false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit() {
     this.initializeForm();
+    
+    // Track form changes
+    this.hiringForm.valueChanges.subscribe(() => {
+      this.hasUnsavedChanges = true;
+    });
   }
 
   private initializeForm() {
@@ -68,6 +79,9 @@ export class HiringFormPage implements OnInit {
       console.log('Form submitted:', formDataWithTimestamp);
       alert('Form submitted successfully and saved to localStorage!');
       
+      // Mark as no unsaved changes after successful submission
+      this.hasUnsavedChanges = false;
+      
       // Optionally reset the form after successful submission
       // this.onReset();
     } else {
@@ -77,6 +91,11 @@ export class HiringFormPage implements OnInit {
   }
 
   private saveToLocalStorage(formData: any) {
+    if (!isPlatformBrowser(this.platformId)) {
+      console.log('Form data (SSR):', formData);
+      return;
+    }
+    
     try {
       // Get existing data from localStorage
       const existingData = localStorage.getItem('hiringForms');
@@ -105,6 +124,10 @@ export class HiringFormPage implements OnInit {
 
   // Method to retrieve all saved forms from localStorage
   getAllSavedForms(): any[] {
+    if (!isPlatformBrowser(this.platformId)) {
+      return [];
+    }
+    
     try {
       const existingData = localStorage.getItem('hiringForms');
       return existingData ? JSON.parse(existingData) : [];
@@ -116,6 +139,10 @@ export class HiringFormPage implements OnInit {
 
   // Method to clear all saved forms from localStorage
   clearAllSavedForms(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+    
     if (confirm('Are you sure you want to clear all saved forms?')) {
       localStorage.removeItem('hiringForms');
       alert('All saved forms have been cleared.');
@@ -160,6 +187,15 @@ export class HiringFormPage implements OnInit {
       this.skillsArray.removeAt(0);
     }
     this.addSkill();
+    this.hasUnsavedChanges = false;
+  }
+
+  // CanDeactivate implementation
+  canDeactivate(): boolean {
+    if (this.hasUnsavedChanges) {
+      return confirm('You have unsaved changes. Are you sure you want to leave this page?');
+    }
+    return true;
   }
 
   private markFormGroupTouched() {

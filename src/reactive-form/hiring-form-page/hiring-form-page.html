@@ -1,5 +1,8 @@
 <div class="hiring-form-container">
-  <h2>Job Hiring Form</h2>
+  <div class="form-header">
+    <h2>Job Hiring Form</h2>
+    <app-logout-button buttonClass="logout-btn small"></app-logout-button>
+  </div>
   
   <form [formGroup]="hiringForm" (ngSubmit)="onSubmit()" class="hiring-form">
     

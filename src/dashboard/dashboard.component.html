@@ -1,0 +1,79 @@
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <div class="header-content">
+      <h1>Dashboard</h1>
+      <div class="user-info">
+        <span>Welcome, {{ currentUser?.username }}</span>
+        <app-logout-button></app-logout-button>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="dashboard-grid">
+      
+      <!-- Stats Cards -->
+      <div class="stats-section">
+        <h2>Overview</h2>
+        <div class="stats-grid" *ngIf="dashboardData">
+          <div class="stat-card">
+            <div class="stat-icon users">👥</div>
+            <div class="stat-content">
+              <h3>{{ dashboardData.totalUsers.toLocaleString() }}</h3>
+              <p>Total Users</p>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon orders">📦</div>
+            <div class="stat-content">
+              <h3>{{ dashboardData.totalOrders.toLocaleString() }}</h3>
+              <p>Total Orders</p>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon revenue">💰</div>
+            <div class="stat-content">
+              <h3>${{ dashboardData.revenue.toLocaleString() }}</h3>
+              <p>Revenue</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="actions-section">
+        <h2>Quick Actions</h2>
+        <div class="action-buttons">
+          <button class="action-btn primary" (click)="navigateToHiringForm()">
+            <span class="btn-icon">📝</span>
+            <span class="btn-text">Hiring Form</span>
+          </button>
+          
+          <button class="action-btn secondary" (click)="navigateToProfile()">
+            <span class="btn-icon">👤</span>
+            <span class="btn-text">View Profile</span>
+          </button>
+          
+          <button class="action-btn tertiary">
+            <span class="btn-icon">⚙️</span>
+            <span class="btn-text">Settings</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="activity-section" *ngIf="dashboardData">
+        <h2>Recent Activity</h2>
+        <div class="activity-list">
+          <div class="activity-item" *ngFor="let activity of dashboardData.recentActivity">
+            <div class="activity-dot"></div>
+            <span>{{ activity }}</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>

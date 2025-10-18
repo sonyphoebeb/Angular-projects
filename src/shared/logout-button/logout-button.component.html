@@ -1,0 +1,8 @@
+<button 
+  [class]="buttonClass"
+  (click)="onLogout()"
+  type="button"
+>
+  <span *ngIf="showIcon" class="logout-icon">🚪</span>
+  <span class="logout-text">{{ buttonText }}</span>
+</button>
