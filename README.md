@@ -1292,7 +1292,7 @@ Then add <router-outlet></router-outlet> in app.component.html.
 
 This phase covers Reactive Forms, Router Basics, Route Guards, and Lazy Loading in Angular. These topics form the foundation for building large-scale, modular, and secure Angular applications.
 
-🧩 1️⃣ Reactive Forms
+<h2> 🧩 1️⃣ Reactive Forms </h2> 
 
 Reactive forms provide a model-driven approach to handling form inputs in Angular.
 They offer greater control, scalability, and testability than template-driven forms.
@@ -1317,7 +1317,7 @@ this.userForm = new FormGroup({
   <button [disabled]="userForm.invalid">Submit</button>
 </form>
 
-🚦 2️⃣ Router Basics
+<h2> 🚦 2️⃣ Router Basics </h2> 
 
 Routing allows navigation between different views or pages in a single-page Angular application.
 
@@ -1344,7 +1344,7 @@ const routes: Routes = [
 <a [routerLink]="['/user', userId]">User Details</a>
 <router-outlet></router-outlet>
 
-🛡️ 3️⃣ Route Guards
+<h2> 🛡️ 3️⃣ Route Guards </h2> 
 
 Guards are used to control access to certain routes based on conditions like authentication or unsaved changes.
 
@@ -1365,7 +1365,7 @@ export class AuthGuard implements CanActivate {
   }
 }
 
-⚡ 4️⃣ Lazy Loading
+<h2> ⚡ 4️⃣ Lazy Loading </h2> 
 
 Lazy loading improves performance by loading modules only when needed instead of at app startup.
 
