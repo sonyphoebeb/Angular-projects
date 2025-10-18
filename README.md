@@ -1297,25 +1297,57 @@ This phase covers Reactive Forms, Router Basics, Route Guards, and Lazy Loading 
 Reactive forms provide a model-driven approach to handling form inputs in Angular.
 They offer greater control, scalability, and testability than template-driven forms.
 
-🔹 Key Concepts
-Concept	Description
-FormControl	Represents a single input field and its value/state.
-FormGroup	A collection of FormControls that represent the form as a group.
-FormBuilder	A helper service to easily create form groups and controls.
-Reactive Validation	Add synchronous validators (e.g., Validators.required, Validators.minLength) directly in the component.
-Async Validators	Validate values asynchronously, e.g., checking if a username already exists in a database.
-Dynamic Forms	Build forms dynamically in TypeScript based on configuration objects or data models.
+<h3> 🔹 Key Concepts </h3>
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Concept</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FormControl</td>
+      <td>Represents a single input field and its value/state.</td>
+    </tr>
+    <tr>
+      <td>FormGroup</td>
+      <td>A collection of FormControls that represent the form as a group.</td>
+    </tr>
+    <tr>
+      <td>FormBuilder</td>
+      <td>A helper service to easily create form groups and controls.</td>
+    </tr>
+    <tr>
+      <td>Reactive Validation</td>
+      <td>Add synchronous validators (e.g., <code>Validators.required</code>, <code>Validators.minLength</code>) directly in the component.</td>
+    </tr>
+    <tr>
+      <td>Async Validators</td>
+      <td>Validate values asynchronously, e.g., checking if a username already exists in a database.</td>
+    </tr>
+    <tr>
+      <td>Dynamic Forms</td>
+      <td>Build forms dynamically in TypeScript based on configuration objects or data models.</td>
+    </tr>
+  </tbody>
+</table>
+ 
 🧠 Example
-this.userForm = new FormGroup({
-  name: new FormControl('', Validators.required),
-  email: new FormControl('', [Validators.required, Validators.email])
-});
 
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-  <input formControlName="name" placeholder="Name">
-  <input formControlName="email" placeholder="Email">
-  <button [disabled]="userForm.invalid">Submit</button>
-</form>
+ts
+
+    this.userForm = new FormGroup({
+     name: new FormControl('', Validators.required),
+     email: new FormControl('', [Validators.required, Validators.email])
+    });
+html
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <input formControlName="name" placeholder="Name">
+    <input formControlName="email" placeholder="Email">
+    <button [disabled]="userForm.invalid">Submit</button>
+    </form>
 
 <h2> 🚦 2️⃣ Router Basics </h2> 
 
