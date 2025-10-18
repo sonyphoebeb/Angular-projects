@@ -1028,81 +1028,93 @@ This repository contains Angular practice assignments demonstrating key concepts
 
 <h2> 📝 Assignments Overview </h2>
 
-<h3> Assignment 1: Directives Demo </h3>
+<h3> Assignment 1: Directives </h3>
 
 * Objective: Create a component that demonstrates all Angular structural and attribute directives.
 
-Features Implemented:
+* Features Implemented:
 
-*ngIf → Conditional rendering
+      ngIf → Conditional rendering
 
-*ngFor → Looping through arrays
+      ngFor → Looping through arrays
 
-*ngSwitch → Conditional switching
+      ngSwitch → Conditional switching
 
-[ngClass] → Dynamic class binding
+      [ngClass] → Dynamic class binding
 
-[ngStyle] → Dynamic inline styles
+      [ngStyle] → Dynamic inline styles
 
-Assignment 2: Data Binding
+<h3>  Assignment 2: Data Binding </h3>
 
-Objective: Demonstrate data binding techniques in Angular with a proper model execution.
+* Objective: Demonstrate data binding techniques in Angular with a proper model execution.
 
-Features Implemented:
+* Features Implemented:
 
-Interpolation → Displaying component data in templates
+      Interpolation → Displaying component data in templates
 
-Property Binding → Binding HTML element properties
+      Property Binding → Binding HTML element properties
+  
+      Event Binding → Handling user events
 
-Event Binding → Handling user events
+      Two-way Binding → Synchronizing input fields with component data using [(ngModel)]
 
-Two-way Binding → Synchronizing input fields with component data using [(ngModel)]
+<h3> Assignment 3: Built-in Pipes </h3> 
 
-Assignment 3: Built-in Pipes Demo
+* Objective: Create a component to demonstrate all Angular built-in pipes using different data types.
 
-Objective: Create a component to demonstrate all Angular built-in pipes using different data types.
+* Features Implemented:
 
-Features Implemented:
+      DatePipe → Format dates
 
-DatePipe → Format dates
+      UpperCasePipe / LowerCasePipe / TitleCasePipe → String formatting
 
-UpperCasePipe / LowerCasePipe / TitleCasePipe → String formatting
+      CurrencyPipe / DecimalPipe / PercentPipe → Number formatting
 
-CurrencyPipe / DecimalPipe / PercentPipe → Number formatting
+      JsonPipe → Display objects as JSON
 
-JsonPipe → Display objects as JSON
+      SlicePipe → Array slicing
 
-SlicePipe → Array slicing
+* UI Features:
 
-UI Features:
+      Table format with example, output, and data type columns
 
-Table format with example, output, and data type columns
+      Color-coded data type labels with icons for better visualization
 
-Color-coded data type labels with icons for better visualization
+<h3> 🔗 Technologies Used </h3> 
 
-🔗 Technologies Used
+* Angular
 
-Angular 15+
+* HTML & CSS
 
-HTML5 & CSS3
+* TypeScript
 
-TypeScript
+<h3> 📂 Folder Structure (Sample) </h3> 
 
-📂 Folder Structure (Sample)
 angular-assignments/
+
 │
+
 ├── assignment1-directives/
+
 │   └── directives-demo.component.ts/html/css
+
 │
+
 ├── assignment2-databinding/
+
 │   └── data-binding.component.ts/html/css
+
 │
+
 ├── assignment3-pipes/
+
 │   └── pipes-assignment.component.ts/html/css
+
 │
+
 └── README.md
 
-🎯 Key Learning Outcomes
+<h2> 🎯 Key Learning Outcomes </h2> 
 
 Understanding and implementing Angular directives.
 
@@ -1111,4 +1123,165 @@ Practicing data binding techniques for dynamic templates.
 Using built-in pipes effectively for data transformation.
 
 Structuring components with proper separation of logic and UI.
+
+
+
+<br>
+
+# 🗓️ Date: 17-Oct-2025 - Angular core topics revise
+
+<h2> 🧩 1️⃣ Components </h2> 
+
+<b>Definition:</b> The basic building blocks of Angular applications.
+
+Each component controls a part of the UI.
+
+Example:
+
+    @Component({
+    selector: 'app-hello',
+    template: `<h2>Hello {{name}}!</h2>`
+    })
+    export class HelloComponent {
+     name = 'Sony';
+    }
+
+🟢 Declared in a module (usually AppModule).
+
+🟢 Connected using selector <app-hello></app-hello>.
+
+<br>
+<h2> ⚙️ 2️⃣ Directives </h2> 
+
+<b>Purpose:</b> Add behavior or modify elements in the DOM.
+
+* Structural Directives: change DOM structure
+  
+  *ngIf, *ngFor, *ngSwitchCase
+
+* Attribute Directives: change element behavior or style
+  
+  [ngStyle], [ngClass], custom directives
+
+Example:
+
+    <p *ngIf="isLoggedIn">Welcome back!</p>
+    <ul>
+    <li *ngFor="let item of items">{{ item }}</li>
+    </ul>
+<br>
+<h2> 🔗 3️⃣ Data Binding </h2> 
+
+Connects your TypeScript logic and HTML template.
+
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Example</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Interpolation</td>
+      <td>{{'{{ name }}'}}</td>
+      <td>Display data</td>
+    </tr>
+    <tr>
+      <td>Property Binding</td>
+      <td>[disabled]="isDisabled"</td>
+      <td>Bind HTML properties</td>
+    </tr>
+    <tr>
+      <td>Event Binding</td>
+      <td>(click)="onClick()"</td>
+      <td>Handle events</td>
+    </tr>
+    <tr>
+      <td>Two-way Binding</td>
+      <td>[(ngModel)]="userName"</td>
+      <td>Sync input and model</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h2> 💬 4️⃣ Pipes </h2>
+
+Transform data in templates.
+
+Example:
+
+    <p>{{ today | date:'fullDate' }}</p>
+    <p>{{ name | uppercase }}</p>
+
+Built-in:  date, uppercase, lowercase, titlecase, currency, percent, json, slice.
+
+<br>
+<h2> 🧠 5️⃣ Lifecycle Hooks </h2> 
+
+These are methods Angular calls during a component’s life.
+
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Hook</th>
+      <th>When It Runs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ngOnInit()</td>
+      <td>After component initialization</td>
+    </tr>
+    <tr>
+      <td>ngOnChanges()</td>
+      <td>When input data changes</td>
+    </tr>
+    <tr>
+      <td>ngDoCheck()</td>
+      <td>Custom change detection</td>
+    </tr>
+    <tr>
+      <td>ngAfterViewInit()</td>
+      <td>After view is initialized</td>
+    </tr>
+    <tr>
+      <td>ngOnDestroy()</td>
+      <td>Before component is destroyed</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h2> 🧩 6️⃣ Services & Dependency Injection </h2> 
+
+Used for <b>logic sharing</b> (like APIs, data, state).
+Services are injected into components via constructor injection.
+
+Example:
+
+    @Injectable({ providedIn: 'root' })
+    export class UserService {
+     getUser() {
+    return { name: 'Sony', role: 'Student' };
+     }
+    }
+ 
+    export class ProfileComponent {
+    constructor(private userService: UserService) {}
+    }
+<br>
+<h2> 🌐 7️⃣ Routing </h2> 
+
+Handles page navigation inside SPA (Single Page App).
+
+Example:
+
+    const routes: Routes = [
+    { path: 'home', component: HomeComponent },
+    { path: 'about', component: AboutComponent }
+    ];
+
+Then add <router-outlet></router-outlet> in app.component.html.
+
 
