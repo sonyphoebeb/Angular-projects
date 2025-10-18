@@ -20,7 +20,7 @@ import { PipesAssignment } from '../pipes-assignment/pipes-assignment';
   imports: [RouterOutlet, CustomersList, Calculations, About, 
     NavBar, LiveCounter, LightSwitch, EventBinding, UserProfile,
     StructuralDirectives, AttributeDirectives, BuiltInPipes,
-    DirectivesAssignment, DataBindingAssignment, PipesAssignment],
+    DirectivesAssignment, DataBindingAssignment, PipesAssignment,],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -29,5 +29,7 @@ export const routes: Routes = [
     { path: 'built-in-pipes', component: BuiltInPipes}, 
     { path: 'directives-assignment', component: DirectivesAssignment},
     { path: 'data-binding-assignment', component: DataBindingAssignment},
-    { path: 'pipes-assignment', component: PipesAssignment}
+    { path: 'pipes-assignment', component: PipesAssignment},
+    { path: 'reactive-form', 
+        loadChildren: () => import('../reactive-form/reactive-form-module').then(m => m.ReactiveFormsModule) },
 ];

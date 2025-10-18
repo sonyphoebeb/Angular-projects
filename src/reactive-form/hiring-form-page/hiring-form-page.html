@@ -1,0 +1,202 @@
+<div class="hiring-form-container">
+  <h2>Job Hiring Form</h2>
+  
+  <form [formGroup]="hiringForm" (ngSubmit)="onSubmit()" class="hiring-form">
+    
+    <!-- Job Title -->
+    <div class="form-group">
+      <label for="jobTitle">Job Title *</label>
+      <input 
+        type="text" 
+        id="jobTitle" 
+        formControlName="jobTitle" 
+        placeholder="e.g., Senior Software Developer"
+        [class.error]="isFieldInvalid('jobTitle')"
+      >
+      <div class="error-message" *ngIf="isFieldInvalid('jobTitle')">
+        {{ getFieldError('jobTitle') }}
+      </div>
+    </div>
+
+    <!-- Job Code -->
+    <div class="form-group">
+      <label for="jobCode">Job Code *</label>
+      <input 
+        type="text" 
+        id="jobCode" 
+        formControlName="jobCode" 
+        placeholder="e.g., DEV-001"
+        [class.error]="isFieldInvalid('jobCode')"
+      >
+      <div class="error-message" *ngIf="isFieldInvalid('jobCode')">
+        {{ getFieldError('jobCode') }}
+      </div>
+    </div>
+
+    <!-- Job Description -->
+    <div class="form-group">
+      <label for="jobDescription">Job Description *</label>
+      <textarea 
+        id="jobDescription" 
+        formControlName="jobDescription" 
+        placeholder="Describe the role, responsibilities, and requirements..."
+        rows="4"
+        [class.error]="isFieldInvalid('jobDescription')"
+      ></textarea>
+      <div class="error-message" *ngIf="isFieldInvalid('jobDescription')">
+        {{ getFieldError('jobDescription') }}
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="form-group">
+      <label for="education">Education Required *</label>
+      <select 
+        id="education" 
+        formControlName="education"
+        [class.error]="isFieldInvalid('education')"
+      >
+        <option value="">Select Education Level</option>
+        <option value="high-school">High School</option>
+        <option value="diploma">Diploma</option>
+        <option value="bachelor">Bachelor's Degree</option>
+        <option value="master">Master's Degree</option>
+        <option value="phd">PhD</option>
+        <option value="any">Any</option>
+      </select>
+      <div class="error-message" *ngIf="isFieldInvalid('education')">
+        {{ getFieldError('education') }}
+      </div>
+    </div>
+
+    <!-- Experience Range -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="minExperience">Minimum Experience (Years) *</label>
+        <input 
+          type="number" 
+          id="minExperience" 
+          formControlName="minExperience" 
+          placeholder="0"
+          min="0"
+          [class.error]="isFieldInvalid('minExperience')"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('minExperience')">
+          {{ getFieldError('minExperience') }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="maxExperience">Maximum Experience (Years) *</label>
+        <input 
+          type="number" 
+          id="maxExperience" 
+          formControlName="maxExperience" 
+          placeholder="5"
+          min="0"
+          [class.error]="isFieldInvalid('maxExperience')"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('maxExperience')">
+          {{ getFieldError('maxExperience') }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Salary -->
+    <div class="form-group">
+      <label for="salary">Salary Range (USD) *</label>
+      <input 
+        type="number" 
+        id="salary" 
+        formControlName="salary" 
+        placeholder="e.g., 75000"
+        min="0"
+        [class.error]="isFieldInvalid('salary')"
+      >
+      <div class="error-message" *ngIf="isFieldInvalid('salary')">
+        {{ getFieldError('salary') }}
+      </div>
+    </div>
+
+    <!-- Skills Array -->
+    <div class="form-group">
+      <label>Required Skills *</label>
+      <div formArrayName="skills" class="skills-container">
+        <div 
+          *ngFor="let skill of skillsArray.controls; let i = index" 
+          [formGroupName]="i" 
+          class="skill-item"
+        >
+          <div class="skill-inputs">
+            <input 
+              type="text" 
+              formControlName="skill" 
+              placeholder="Skill name (e.g., JavaScript)"
+              class="skill-name"
+            >
+            <select formControlName="level" class="skill-level">
+              <option value="">Select Level</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+              <option value="expert">Expert</option>
+            </select>
+            <button 
+              type="button" 
+              (click)="removeSkill(i)" 
+              class="remove-skill-btn"
+              [disabled]="skillsArray.length === 1"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+      <button 
+        type="button" 
+        (click)="addSkill()" 
+        class="add-skill-btn"
+      >
+        + Add Another Skill
+      </button>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="form-actions">
+      <button 
+        type="button" 
+        (click)="onReset()" 
+        class="btn btn-secondary"
+      >
+        Reset Form
+      </button>
+      <button 
+        type="submit" 
+        class="btn btn-primary"
+        [disabled]="hiringForm.invalid"
+      >
+        Submit Job Posting
+      </button>
+    </div>
+
+    <!-- Additional Actions -->
+    <div class="additional-actions">
+      <button 
+        type="button" 
+        (click)="viewSavedForms()" 
+        class="btn btn-info"
+      >
+        View Saved Forms ({{ getAllSavedForms().length }})
+      </button>
+      <button 
+        type="button" 
+        (click)="clearAllSavedForms()" 
+        class="btn btn-warning"
+        [disabled]="getAllSavedForms().length === 0"
+      >
+        Clear All Saved Forms
+      </button>
+    </div>
+
+  </form>
+</div>
