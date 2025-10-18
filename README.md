@@ -1433,25 +1433,24 @@ Lazy loading improves performance by loading modules only when needed instead of
 
 app-routing.module.ts
 
-const routes: Routes = [
-  {
+    const routes: Routes = [
+    {
     path: 'admin',
     loadChildren: () =>
       import('./admin/admin.module').then(m => m.AdminModule)
-  }
-];
-
+    }
+    ];
 
 ✅ This ensures that the AdminModule is loaded only when the user navigates to /admin.
 
-🎯 Learning Outcomes
+<h2> 🎯 Learning Outcomes </h2> 
 
-Understand and implement Reactive Forms using FormControl, FormGroup, and validators.
+* Understand and implement Reactive Forms using FormControl, FormGroup, and validators.
 
-Configure routes and navigate dynamically using parameters and query strings.
+* Configure routes and navigate dynamically using parameters and query strings.
 
-Implement Route Guards for authentication and route protection.
+* Implement Route Guards for authentication and route protection.
 
-Optimize large applications using Lazy Loading and modular architecture.
+* Optimize large applications using Lazy Loading and modular architecture.
 
 
