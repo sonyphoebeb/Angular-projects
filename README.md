@@ -1333,7 +1333,7 @@ They offer greater control, scalability, and testability than template-driven fo
   </tbody>
 </table>
  
-🧠 Example
+<h4> 🧠 Example </h4>
 
 ts
 
@@ -1365,7 +1365,7 @@ Routing allows navigation between different views or pages in a single-page Angu
 
 * Child Routes: Nest routes inside parent routes for modular page design.
 
-🧠 Example
+<h4> 🧠 Example </h4> 
 
 ts
 
@@ -1385,28 +1385,51 @@ html
 
 Guards are used to control access to certain routes based on conditions like authentication or unsaved changes.
 
-Guard	Purpose
-CanActivate	Decide if a route can be activated (e.g., check login).
-CanDeactivate	Prevent leaving a route (e.g., unsaved form data).
-Resolve	Preload data before route activation.
-Auth Guard Example	Implements CanActivate to restrict access to protected routes.
-🧠 Example
-@Injectable({ providedIn: 'root' })
-export class AuthGuard implements CanActivate {
-  constructor(private auth: AuthService, private router: Router) {}
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Guard</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CanActivate</td>
+      <td>Decide if a route can be activated (e.g., check login).</td>
+    </tr>
+    <tr>
+      <td>CanDeactivate</td>
+      <td>Prevent leaving a route (e.g., unsaved form data).</td>
+    </tr>
+    <tr>
+      <td>Resolve</td>
+      <td>Preload data before route activation.</td>
+    </tr>
+    <tr>
+      <td>Auth Guard Example</td>
+      <td>Implements <code>CanActivate</code> to restrict access to protected routes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4> 🧠 Example </h4>
+ 
+    @Injectable({ providedIn: 'root' })
+    export class AuthGuard implements CanActivate {
+    constructor(private auth: AuthService, private router: Router) {}
   
-  canActivate(): boolean {
+     canActivate(): boolean {
     if (this.auth.isLoggedIn()) return true;
     this.router.navigate(['/login']);
     return false;
-  }
-}
+     }
+    }
 
 <h2> ⚡ 4️⃣ Lazy Loading </h2> 
 
 Lazy loading improves performance by loading modules only when needed instead of at app startup.
 
-🧠 Example
+<h4> 🧠 Example </h4>
 
 app-routing.module.ts
 
