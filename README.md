@@ -1353,28 +1353,33 @@ html
 
 Routing allows navigation between different views or pages in a single-page Angular application.
 
-🔹 Topics Covered
+<h3> 🔹 Topics Covered </h3>
 
-Routes Setup: Defining route paths and components.
+* Routes Setup: Defining route paths and components.
 
-routerLink: Template binding for navigation.
+* routerLink: Template binding for navigation.
 
-Route Parameters: Pass dynamic values in the URL.
+* Route Parameters: Pass dynamic values in the URL.
 
-Query Parameters: Send optional data through the URL.
+* Query Parameters: Send optional data through the URL.
 
-Child Routes: Nest routes inside parent routes for modular page design.
+* Child Routes: Nest routes inside parent routes for modular page design.
 
 🧠 Example
-const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'user/:id', component: UserComponent },
-  { path: 'settings', component: SettingsComponent }
-];
 
-<a routerLink="/home">Home</a>
-<a [routerLink]="['/user', userId]">User Details</a>
-<router-outlet></router-outlet>
+ts
+
+    const routes: Routes = [
+    { path: 'home', component: HomeComponent },
+    { path: 'user/:id', component: UserComponent },
+    { path: 'settings', component: SettingsComponent }
+    ];
+    
+html
+
+    <a routerLink="/home">Home</a>
+    <a [routerLink]="['/user', userId]">User Details</a>
+    <router-outlet></router-outlet>
 
 <h2> 🛡️ 3️⃣ Route Guards </h2> 
 
