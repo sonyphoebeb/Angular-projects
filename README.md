@@ -1286,8 +1286,9 @@ Then add <router-outlet></router-outlet> in app.component.html.
 
 
 
+<br>
 
-📘 Angular – Phase 4: Reactive Forms & Advanced Routing
+# 🗓️ Date: 18-Oct-2025 - 📘 Angular – Phase 4: Reactive Forms & Advanced Routing
 
 This phase covers Reactive Forms, Router Basics, Route Guards, and Lazy Loading in Angular. These topics form the foundation for building large-scale, modular, and secure Angular applications.
 
