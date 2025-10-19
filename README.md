@@ -1469,6 +1469,7 @@ app-routing.module.ts
 <h2> 📦 1. Lazy Loading </h2> 
 
 <b>Definition:</b> 
+
 Lazy Loading is a technique to load Angular modules only when they are needed — instead of loading the entire application at startup.
 
 <b>Purpose:</b> 
@@ -1500,39 +1501,40 @@ When the user navigates to /tasks, only then TasksModule is loaded.
 
 <h2> 🌐 2. HttpClientModule — Create Operation (C in CRUD) </h2> 
 
-Purpose:
+<b>Purpose:</b>
+
 Used to send HTTP requests to APIs for communication between client (Angular app) and server.
 
-Setup:
+<b>Setup:</b>
 
 // app.module.ts
-import { HttpClientModule } from '@angular/common/http';
 
-@NgModule({
-  imports: [HttpClientModule],
-})
-export class AppModule {}
+    import { HttpClientModule } from '@angular/common/http';
 
+    @NgModule({
+    imports: [HttpClientModule],
+    })
+    export class AppModule {}
 
 POST Request (Create Data):
 
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+    import { HttpClient } from '@angular/common/http';
+    import { Component } from '@angular/core';
 
-@Component({
-  selector: 'app-create-task',
-  templateUrl: './create-task.component.html'
-})
-export class CreateTaskComponent {
-  constructor(private http: HttpClient) {}
+    @Component({
+    selector: 'app-create-task',
+    templateUrl: './create-task.component.html'
+    })
+    export class CreateTaskComponent {
+    constructor(private http: HttpClient) {}
 
-  createTask(taskData: any) {
+     createTask(taskData: any) {
     this.http.post('https://jsonplaceholder.typicode.com/posts', taskData)
       .subscribe(response => {
         console.log('Task Created:', response);
       });
-  }
-}
+      }
+    }
 
 
 Explanation:
