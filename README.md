@@ -1576,6 +1576,7 @@ An Observable is a stream of data that can be observed over time — part of RxJ
 
 When you call this.http.post() or this.http.get(), it returns an Observable.
 
+<br>
 <h2> ✅ Summary </h2>
 
 <table border="1" cellpadding="8" cellspacing="0">
