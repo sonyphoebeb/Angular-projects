@@ -1466,6 +1466,116 @@ app-routing.module.ts
 # 🗓️ Date: 19-Oct-2025 - Sunday
 # 🧠 Angular Class Notes — Lazy Loading, HttpClientModule (Create), and Observable
 
+📦 1. Lazy Loading
+
+Definition:
+Lazy Loading is a technique to load Angular modules only when they are needed — instead of loading the entire application at startup.
+
+Purpose:
+
+Improves performance and load time.
+
+Reduces bundle size on initial load.
+
+How it works:
+
+Define feature modules (e.g., TasksModule, UsersModule).
+
+Configure routes with loadChildren in app-routing.module.ts.
+
+Example:
+
+// app-routing.module.ts
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { 
+    path: 'tasks',
+    loadChildren: () => import('./tasks/tasks.module').then(m => m.TasksModule)
+  }
+];
+
+
+When the user navigates to /tasks, only then TasksModule is loaded.
+
+🌐 2. HttpClientModule — Create Operation (C in CRUD)
+
+Purpose:
+Used to send HTTP requests to APIs for communication between client (Angular app) and server.
+
+Setup:
+
+// app.module.ts
+import { HttpClientModule } from '@angular/common/http';
+
+@NgModule({
+  imports: [HttpClientModule],
+})
+export class AppModule {}
+
+
+POST Request (Create Data):
+
+import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-create-task',
+  templateUrl: './create-task.component.html'
+})
+export class CreateTaskComponent {
+  constructor(private http: HttpClient) {}
+
+  createTask(taskData: any) {
+    this.http.post('https://jsonplaceholder.typicode.com/posts', taskData)
+      .subscribe(response => {
+        console.log('Task Created:', response);
+      });
+  }
+}
+
+
+Explanation:
+
+HttpClient.post() is used for sending data to a server.
+
+.subscribe() is used to handle the response asynchronously.
+
+🔁 3. Observable
+
+Definition:
+An Observable is a stream of data that can be observed over time — part of RxJS library in Angular.
+
+Used for:
+
+Handling asynchronous data (e.g., HTTP requests, real-time updates).
+
+Reactive programming in Angular.
+
+Basic Example:
+
+import { Observable } from 'rxjs';
+
+const dataStream = new Observable(observer => {
+  observer.next('Step 1');
+  observer.next('Step 2');
+  observer.complete();
+});
+
+dataStream.subscribe({
+  next: value => console.log(value),
+  complete: () => console.log('Done!')
+});
+
+
+In Angular:
+When you call this.http.post() or this.http.get(), it returns an Observable.
+
+✅ Summary
+Concept	Purpose	Example / Notes
+Lazy Loading	Loads feature modules only when needed	loadChildren in routes
+HttpClientModule (POST)	Send data to API (Create)	this.http.post()
+Observable	Handles async data streams	subscribe() to listen
+
 
 
 
