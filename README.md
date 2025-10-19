@@ -1545,16 +1545,17 @@ Used to send HTTP requests to APIs for communication between client (Angular app
 
 <h2> 🔁 3. Observable </h2> 
 
-Definition:
+<b>Definition:</b>
+
 An Observable is a stream of data that can be observed over time — part of RxJS library in Angular.
 
-Used for:
+<b>Used for:</b>
 
-Handling asynchronous data (e.g., HTTP requests, real-time updates).
+* Handling asynchronous data (e.g., HTTP requests, real-time updates).
 
-Reactive programming in Angular.
+* Reactive programming in Angular.
 
-Basic Example:
+<b>Basic Example:</b>
 
 import { Observable } from 'rxjs';
 
