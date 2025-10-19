@@ -1516,7 +1516,7 @@ Used to send HTTP requests to APIs for communication between client (Angular app
     })
     export class AppModule {}
 
-POST Request (Create Data):
+<b>POST Request (Create Data):</b>
 
     import { HttpClient } from '@angular/common/http';
     import { Component } from '@angular/core';
@@ -1537,11 +1537,11 @@ POST Request (Create Data):
     }
 
 
-Explanation:
+<b>Explanation:</b>
 
-HttpClient.post() is used for sending data to a server.
+* HttpClient.post() is used for sending data to a server.
 
-.subscribe() is used to handle the response asynchronously.
+* .subscribe() is used to handle the response asynchronously.
 
 <h2> 🔁 3. Observable </h2> 
 
