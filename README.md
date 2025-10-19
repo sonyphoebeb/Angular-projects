@@ -1557,21 +1557,21 @@ An Observable is a stream of data that can be observed over time — part of RxJ
 
 <b>Basic Example:</b>
 
-import { Observable } from 'rxjs';
+    import { Observable } from 'rxjs';
 
-const dataStream = new Observable(observer => {
-  observer.next('Step 1');
-  observer.next('Step 2');
-  observer.complete();
-});
+    const dataStream = new Observable(observer => {
+    observer.next('Step 1');
+    observer.next('Step 2');
+    observer.complete();
+    });
 
-dataStream.subscribe({
-  next: value => console.log(value),
-  complete: () => console.log('Done!')
-});
+    dataStream.subscribe({
+    next: value => console.log(value),
+    complete: () => console.log('Done!')
+    });
 
+<b>In Angular:</b>
 
-In Angular:
 When you call this.http.post() or this.http.get(), it returns an Observable.
 
 <h2> ✅ Summary </h2>
