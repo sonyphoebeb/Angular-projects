@@ -1576,10 +1576,32 @@ When you call this.http.post() or this.http.get(), it returns an Observable.
 
 <h2> ✅ Summary </h2>
 
-Concept	Purpose	Example / Notes
-Lazy Loading	Loads feature modules only when needed	loadChildren in routes
-HttpClientModule (POST)	Send data to API (Create)	this.http.post()
-Observable	Handles async data streams	subscribe() to listen
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Concept</th>
+      <th>Purpose</th>
+      <th>Example / Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lazy Loading</td>
+      <td>Loads feature modules only when needed</td>
+      <td><code>loadChildren</code> in routes</td>
+    </tr>
+    <tr>
+      <td>HttpClientModule (POST)</td>
+      <td>Send data to API (Create)</td>
+      <td><code>this.http.post()</code></td>
+    </tr>
+    <tr>
+      <td>Observable</td>
+      <td>Handles async data streams</td>
+      <td><code>subscribe()</code> to listen</td>
+    </tr>
+  </tbody>
+</table>
 
 
 
