@@ -1468,31 +1468,32 @@ app-routing.module.ts
 
 <h2> 📦 1. Lazy Loading </h2> 
 
-Definition:
+<b>Definition:</b> 
 Lazy Loading is a technique to load Angular modules only when they are needed — instead of loading the entire application at startup.
 
-Purpose:
+<b>Purpose:</b> 
 
-Improves performance and load time.
+* Improves performance and load time.
 
-Reduces bundle size on initial load.
+* Reduces bundle size on initial load.
 
-How it works:
+<b> How it works:</b>
 
-Define feature modules (e.g., TasksModule, UsersModule).
+* Define feature modules (e.g., TasksModule, UsersModule).
 
-Configure routes with loadChildren in app-routing.module.ts.
+* Configure routes with loadChildren in app-routing.module.ts.
 
-Example:
+<b>Example:</b> 
 
 // app-routing.module.ts
-const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { 
+    
+    const routes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { 
     path: 'tasks',
     loadChildren: () => import('./tasks/tasks.module').then(m => m.TasksModule)
-  }
-];
+    }
+    ];
 
 
 When the user navigates to /tasks, only then TasksModule is loaded.
