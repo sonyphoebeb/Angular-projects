@@ -1460,3 +1460,36 @@ app-routing.module.ts
 * Optimize large applications using Lazy Loading and modular architecture.
 
 
+
+<br>
+
+# 🗓️ Date: 19-Oct-2025 - Sunday
+# 🧠 Angular Class Notes — Lazy Loading, HttpClientModule (Create), and Observable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
