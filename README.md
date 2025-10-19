@@ -1466,7 +1466,7 @@ app-routing.module.ts
 # 🗓️ Date: 19-Oct-2025 - Sunday
 # 🧠 Angular Class Notes — Lazy Loading, HttpClientModule (Create), and Observable
 
-📦 1. Lazy Loading
+<h2> 📦 1. Lazy Loading </h2> 
 
 Definition:
 Lazy Loading is a technique to load Angular modules only when they are needed — instead of loading the entire application at startup.
@@ -1497,7 +1497,7 @@ const routes: Routes = [
 
 When the user navigates to /tasks, only then TasksModule is loaded.
 
-🌐 2. HttpClientModule — Create Operation (C in CRUD)
+<h2> 🌐 2. HttpClientModule — Create Operation (C in CRUD) </h2> 
 
 Purpose:
 Used to send HTTP requests to APIs for communication between client (Angular app) and server.
@@ -1540,7 +1540,7 @@ HttpClient.post() is used for sending data to a server.
 
 .subscribe() is used to handle the response asynchronously.
 
-🔁 3. Observable
+<h2> 🔁 3. Observable </h2> 
 
 Definition:
 An Observable is a stream of data that can be observed over time — part of RxJS library in Angular.
@@ -1570,7 +1570,8 @@ dataStream.subscribe({
 In Angular:
 When you call this.http.post() or this.http.get(), it returns an Observable.
 
-✅ Summary
+<h2> ✅ Summary </h2>
+
 Concept	Purpose	Example / Notes
 Lazy Loading	Loads feature modules only when needed	loadChildren in routes
 HttpClientModule (POST)	Send data to API (Create)	this.http.post()
