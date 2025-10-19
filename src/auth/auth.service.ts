@@ -49,7 +49,11 @@ export class AuthService {
 
   // Login method
   login(username: string, password: string): boolean {
+    console.log('AuthService.login called with:', { username, password });
+    console.log('Valid user credentials:', this.validUser);
+    
     if (username === this.validUser.username && password === this.validUser.password) {
+      console.log('✅ Credentials match - setting authenticated to true');
       this.isAuthenticatedSubject.next(true);
       this.currentUserSubject.next(this.validUser);
       
@@ -57,15 +61,20 @@ export class AuthService {
       if (isPlatformBrowser(this.platformId)) {
         localStorage.setItem('isAuthenticated', 'true');
         localStorage.setItem('currentUser', JSON.stringify(this.validUser));
+        console.log('✅ Authentication state stored in localStorage');
       }
       
       return true;
+    } else {
+      console.log('❌ Credentials do not match - login failed');
+      // Clear any existing authentication state when login fails
+      this.clearAuthenticationState();
+      return false;
     }
-    return false;
   }
 
-  // Logout method
-  logout(): void {
+  // Clear authentication state
+  private clearAuthenticationState(): void {
     this.isAuthenticatedSubject.next(false);
     this.currentUserSubject.next(null);
     
@@ -73,7 +82,14 @@ export class AuthService {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.removeItem('isAuthenticated');
       localStorage.removeItem('currentUser');
+      console.log('🧹 Authentication state cleared from localStorage');
     }
+  }
+
+  // Logout method
+  logout(): void {
+    console.log('AuthService: Logging out user');
+    this.clearAuthenticationState();
   }
 
   // Check stored authentication on app initialization
@@ -108,5 +124,11 @@ export class AuthService {
   // Validate token (for future JWT implementation)
   validateToken(): boolean {
     return this.isAuthenticated;
+  }
+
+  // Method to clear all authentication data (useful for testing)
+  clearAllAuthData(): void {
+    console.log('AuthService: Clearing all authentication data');
+    this.clearAuthenticationState();
   }
 }

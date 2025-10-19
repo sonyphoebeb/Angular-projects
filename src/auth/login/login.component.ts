@@ -47,13 +47,17 @@ export class LoginComponent implements OnInit {
 
       // Simulate API call delay
       setTimeout(() => {
+        console.log('LoginComponent: Attempting login with:', { username, password });
         const isAuthenticated = this.authService.login(username, password);
+        console.log('LoginComponent: Login result:', isAuthenticated);
         
         if (isAuthenticated) {
+          console.log('LoginComponent: Login successful, navigating to dashboard');
           // Get return URL from query params or default to dashboard
           const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/dashboard';
           this.router.navigate([returnUrl]);
         } else {
+          console.log('LoginComponent: Login failed, showing error message');
           this.loginError = 'Invalid username or password. Please try again.';
         }
         
