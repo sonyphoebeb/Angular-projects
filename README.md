@@ -1499,6 +1499,7 @@ Lazy Loading is a technique to load Angular modules only when they are needed �
 
 When the user navigates to /tasks, only then TasksModule is loaded.
 
+<br>
 <h2> 🌐 2. HttpClientModule — Create Operation (C in CRUD) </h2> 
 
 <b>Purpose:</b>
@@ -1543,6 +1544,7 @@ Used to send HTTP requests to APIs for communication between client (Angular app
 
 * .subscribe() is used to handle the response asynchronously.
 
+<br>
 <h2> 🔁 3. Observable </h2> 
 
 <b>Definition:</b>
