@@ -1285,3 +1285,178 @@ Example:
 Then add <router-outlet></router-outlet> in app.component.html.
 
 
+
+<br>
+
+# 🗓️ Date: 18-Oct-2025 - Saturday
+# 📘 Angular – Phase 4: Reactive Forms & Advanced Routing
+
+This phase covers Reactive Forms, Router Basics, Route Guards, and Lazy Loading in Angular. These topics form the foundation for building large-scale, modular, and secure Angular applications.
+
+<br>
+<h2> 🧩 1️⃣ Reactive Forms </h2> 
+
+Reactive forms provide a model-driven approach to handling form inputs in Angular.
+They offer greater control, scalability, and testability than template-driven forms.
+
+<h3> 🔹 Key Concepts </h3>
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Concept</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FormControl</td>
+      <td>Represents a single input field and its value/state.</td>
+    </tr>
+    <tr>
+      <td>FormGroup</td>
+      <td>A collection of FormControls that represent the form as a group.</td>
+    </tr>
+    <tr>
+      <td>FormBuilder</td>
+      <td>A helper service to easily create form groups and controls.</td>
+    </tr>
+    <tr>
+      <td>Reactive Validation</td>
+      <td>Add synchronous validators (e.g., <code>Validators.required</code>, <code>Validators.minLength</code>) directly in the component.</td>
+    </tr>
+    <tr>
+      <td>Async Validators</td>
+      <td>Validate values asynchronously, e.g., checking if a username already exists in a database.</td>
+    </tr>
+    <tr>
+      <td>Dynamic Forms</td>
+      <td>Build forms dynamically in TypeScript based on configuration objects or data models.</td>
+    </tr>
+  </tbody>
+</table>
+ 
+<h4> 🧠 Example </h4>
+
+ts
+
+    this.userForm = new FormGroup({
+     name: new FormControl('', Validators.required),
+     email: new FormControl('', [Validators.required, Validators.email])
+    });
+html
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <input formControlName="name" placeholder="Name">
+    <input formControlName="email" placeholder="Email">
+    <button [disabled]="userForm.invalid">Submit</button>
+    </form>
+
+<br>
+<h2> 🚦 2️⃣ Router Basics </h2> 
+
+Routing allows navigation between different views or pages in a single-page Angular application.
+
+<h3> 🔹 Topics Covered </h3>
+
+* Routes Setup: Defining route paths and components.
+
+* routerLink: Template binding for navigation.
+
+* Route Parameters: Pass dynamic values in the URL.
+
+* Query Parameters: Send optional data through the URL.
+
+* Child Routes: Nest routes inside parent routes for modular page design.
+
+<h4> 🧠 Example </h4> 
+
+ts
+
+    const routes: Routes = [
+    { path: 'home', component: HomeComponent },
+    { path: 'user/:id', component: UserComponent },
+    { path: 'settings', component: SettingsComponent }
+    ];
+    
+html
+
+    <a routerLink="/home">Home</a>
+    <a [routerLink]="['/user', userId]">User Details</a>
+    <router-outlet></router-outlet>
+
+<br>
+<h2> 🛡️ 3️⃣ Route Guards </h2> 
+
+Guards are used to control access to certain routes based on conditions like authentication or unsaved changes.
+
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Guard</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CanActivate</td>
+      <td>Decide if a route can be activated (e.g., check login).</td>
+    </tr>
+    <tr>
+      <td>CanDeactivate</td>
+      <td>Prevent leaving a route (e.g., unsaved form data).</td>
+    </tr>
+    <tr>
+      <td>Resolve</td>
+      <td>Preload data before route activation.</td>
+    </tr>
+    <tr>
+      <td>Auth Guard Example</td>
+      <td>Implements <code>CanActivate</code> to restrict access to protected routes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4> 🧠 Example </h4>
+ 
+    @Injectable({ providedIn: 'root' })
+    export class AuthGuard implements CanActivate {
+    constructor(private auth: AuthService, private router: Router) {}
+  
+     canActivate(): boolean {
+    if (this.auth.isLoggedIn()) return true;
+    this.router.navigate(['/login']);
+    return false;
+     }
+    }
+
+<br>
+<h2> ⚡ 4️⃣ Lazy Loading </h2> 
+
+Lazy loading improves performance by loading modules only when needed instead of at app startup.
+
+<h4> 🧠 Example </h4>
+
+app-routing.module.ts
+
+    const routes: Routes = [
+    {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then(m => m.AdminModule)
+    }
+    ];
+
+✅ This ensures that the AdminModule is loaded only when the user navigates to /admin.
+
+<br>
+<h2> 🎯 Learning Outcomes </h2> 
+
+* Understand and implement Reactive Forms using FormControl, FormGroup, and validators.
+
+* Configure routes and navigate dynamically using parameters and query strings.
+
+* Implement Route Guards for authentication and route protection.
+
+* Optimize large applications using Lazy Loading and modular architecture.
+
+
